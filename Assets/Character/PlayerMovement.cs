@@ -2,8 +2,10 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float speed;      
+    [SerializeField] float speed;
+    [SerializeField] float jumpSpeed;
     [SerializeField] Animator anim;
+    [SerializeField] Rigidbody rigidbody;
     Vector3 lastMove;
 
     void Start()
@@ -19,6 +21,23 @@ public class PlayerMovement : MonoBehaviour
 
         Move (moveHorizontal, moveVertical);
         Animating (moveHorizontal, moveVertical);
+
+        if (Input.GetButtonDown("A"))
+        {
+            Jump();
+        }
+    }
+
+    void Jump()
+    {
+        Vector3 velocity = rigidbody.velocity;
+        Debug.Log(velocity.y);
+
+        if (velocity.y <= 0.0f)
+        {
+            velocity.y = jumpSpeed;
+            rigidbody.velocity = velocity;
+        }
     }
 
     void Move (float moveHorizontal, float moveVertical)
