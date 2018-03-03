@@ -35,21 +35,24 @@ public class TextBoxManager : MonoBehaviour {
 
     void Update()
     {
-        
+        if (Input.GetButtonUp("B") )
+        {
+            NextLine();
+        }
     }
 
     public void NextLine()
     {
         text.text = textLines[currentLine];
-
-        if (textBox.active == false)
+        if (textLines[currentLine].Contains(";"))
+        {
+            textBox.SetActive(false);
+        } else
         {
             textBox.SetActive(true);
         }
-        if (textLines[currentLine].Length == 0)
-        {
-            textBox.SetActive(false);
-        }
+        currentLine++;
+
     }
 
 }
