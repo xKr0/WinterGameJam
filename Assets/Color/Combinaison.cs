@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Combinaison  {
 
-    public ColorManager.ColorList[][] combinaisons;
+    public ColorManager.ColorList[,] combinaisons;
 
     private static Combinaison instance;
 
@@ -26,27 +26,23 @@ public class Combinaison  {
      * */
     private Combinaison()
     {
+        combinaisons = new ColorManager.ColorList[ColorManager.Instance.GetColorCount(), ColorManager.Instance.GetColorCount()];
+
         for (int i = 0; i < ColorManager.Instance.GetColorCount(); i++)
         {
             for (int j = 0; j < ColorManager.Instance.GetColorCount(); j++)
             {
-                combinaisons[i][j] = ColorManager.ColorList.Trash;
+                combinaisons[i,j] = ColorManager.ColorList.Trash;
             }
         }   
         for (int i = 0; i < ColorManager.Instance.GetColorCount(); i++)
         {
-            //combinaisons[i][i] = ColorManager.ColorList[i];
+            combinaisons[i, i] = (ColorManager.ColorList)i;
         }
         AddCombinaison(ColorManager.ColorList.Red, ColorManager.ColorList.Green, ColorManager.ColorList.Yellow);
         AddCombinaison(ColorManager.ColorList.Red, ColorManager.ColorList.Blue, ColorManager.ColorList.Magenta);
         AddCombinaison(ColorManager.ColorList.Blue, ColorManager.ColorList.Green, ColorManager.ColorList.Cyan);
         AddCombinaison(ColorManager.ColorList.White, ColorManager.ColorList.Black, ColorManager.ColorList.Gray);
-        AddCombinaison(ColorManager.ColorList.Red, ColorManager.ColorList.Green, ColorManager.ColorList.Yellow);
-
-
-
-
-
     }
 
     public static Combinaison Instance
@@ -62,13 +58,13 @@ public class Combinaison  {
     }
 
     private void AddCombinaison(ColorManager.ColorList colorA, ColorManager.ColorList colorB, ColorManager.ColorList colorC){
-        combinaisons[(int)colorA][(int)colorB] = colorC;
-        combinaisons[(int)colorB][(int)colorA] = colorC;
+        combinaisons[(int)colorA,(int)colorB] = colorC;
+        combinaisons[(int)colorB,(int)colorA] = colorC;
     }
 
-    public ColorManager.ColorList Combine(ColorManager.ColorList colorA, ColorManager.ColorList colorB){
-        //return ColorManager.ColorList[(int)combinaisons[(int)colorA][(int)colorB]];
-        return ColorManager.ColorList.Red;
+    public Color Combine(ColorManager.ColorList colorA, ColorManager.ColorList colorB){
+        return ColorManager.Instance.GetColorByEnum((ColorManager.ColorList)(combinaisons[(int)colorA,(int)colorB]));
+       
     }
 
 }
