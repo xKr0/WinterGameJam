@@ -27,7 +27,7 @@ public class ColorModule : MonoBehaviour {
         SetSheepColor(myColor);
     }
 
-    void SetSheepColor(ColorManager.ColorList color)
+    public void SetSheepColor(ColorManager.ColorList color)
     {
         this.myColor = color;
         material.SetTexture("_MainTex", colorManager.GetColorByEnum(color));
