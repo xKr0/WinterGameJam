@@ -85,6 +85,8 @@ GameObject:
   - component: {fileID: 114601473723203500}
   - component: {fileID: 114559333662196442}
   - component: {fileID: 114473049564578936}
+  - component: {fileID: 114846002104759650}
+  - component: {fileID: 114663491588963932}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Sheep
@@ -333,7 +335,7 @@ Transform:
   m_GameObject: {fileID: 1266403937976234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.18, y: 0.0000009536743, z: -4.32}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4147022962562670}
   - {fileID: 4558215940962692}
@@ -496,9 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleExplosion: {fileID: 198221631263921120}
-  myColor: 1
-  colorManager: {fileID: 114590732525546982, guid: 120afa2d9eb100f42aac3a73b0c71d1e,
-    type: 2}
+  myColor: 3
 --- !u!114 &114601473723203500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -516,6 +516,29 @@ MonoBehaviour:
     power: 2.25
     isActive: 1
     enthropy: 1
+--- !u!114 &114663491588963932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266403937976234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75e1b6e6219b334689bb99a9b644a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114846002104759650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266403937976234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d833a02cacbfde4d891ef77dc8da827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!137 &137719234907034012
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
