@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] Rigidbody rgbd;
     Vector3 lastMove;
-	bool isPnjInteraction = false;
 
     void Start()
     {
@@ -16,21 +15,13 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate ()
     {
-        // Store the input axes.
-        float moveHorizontal = Input.GetAxisRaw ("Horizontal");
-        float moveVertical = Input.GetAxisRaw ("Vertical");
+        Move();
+        Animating();
 
-        Move (moveHorizontal, moveVertical);
-        Animating (moveHorizontal, moveVertical);
-
-        if (Input.GetButtonUp("A"))
+        if (PlayerSpec.pressJump)
         {
             Jump();
         }
-
-		if (isPnjInteraction && Input.GetButtonUp ("B")) {
-			PnjInteraction ();
-		}
     }
 
     void Jump()
@@ -44,9 +35,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Move (float moveHorizontal, float moveVertical)
+    void Move ()
     {
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        Vector3 movement = new Vector3(PlayerSpec.moveH, 0.0f, PlayerSpec.moveV);
         Turn(movement);
         transform.Translate (movement * speed * Time.deltaTime, Space.World);
     }
@@ -70,25 +61,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Animating (float h, float v)
+    void Animating ()
     {
         // Create a boolean that is true if either of the input axes is non-zero.
-        bool running = h != 0f || v != 0f;
+        bool running = PlayerSpec.moveH != 0f || PlayerSpec.moveV != 0f;
 
         // Tell the animator whether or not the player is walking.
         anim.SetBool ("isRunning", running);
     }
-
-	void OnTriggerEnter(Collider other)
-	{
-		if(other.gameObject.tag == "PNJ") isPnjInteraction = true;
-	}
-
-	void OnTriggerExit(Collider other) {
-		if(other.gameObject.tag == "PNJ") isPnjInteraction = false;
-	}
-
-	void PnjInteraction(){
-		Debug.Log ("Interaction PNJ");
-	}
 }
