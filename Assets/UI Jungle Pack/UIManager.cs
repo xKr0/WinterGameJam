@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -12,32 +13,25 @@ public class UIManager : MonoBehaviour
     public Transform gameOverMenu;
     public Transform controls;
 
+    [SerializeField] GameObject reprendre;
+    [SerializeField] GameObject controles;
+    [SerializeField] GameObject quitter;
+    [SerializeField] GameObject back;
+
+
     // Pause Menu
-    public Sprite currentItemBG, otherItemsBG;
     public static bool isPaused = false;
     private bool showControls = false;
-    private Transform[] choices = new Transform[3];
-    private int currentChoice = 0;
 
     private bool isGameOver;
 
-    public bool isStartPressed = false,
-                isAPressed = false,
-                isBPressed = false,
-                isUpPressed = false,
-                isDownPressed = false;
-
-
     void Awake()
     {
-        Transform choix = pauseMenu.GetChild(0).GetChild(0).Find("Choix");
-        choices[0] = choix.Find("Reprendre");
-        choices[1] = choix.Find("Regles");
-        choices[2] = choix.Find("Quitter");
         pauseMenu.gameObject.SetActive(false);
         controls.gameObject.SetActive(false);
-        HUD.gameObject.SetActive(true);
-        gameOverMenu.gameObject.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(reprendre);
+        //HUD.gameObject.SetActive(true);
+        //gameOverMenu.gameObject.SetActive(false);
     }
 
 
@@ -48,20 +42,24 @@ public class UIManager : MonoBehaviour
         m_VolumeRef = AudioListener.volume;
         AudioListener.volume = 0f;
         pauseMenu.gameObject.SetActive(true);
+        // Select the button
+        reprendre.GetComponent<Button>().Select(); // Or EventSystem.current.SetSelectedGameObject(myButton.gameObject)
+        // Highlight the button
+        reprendre.GetComponent<Button>().OnSelect(null); // Or myButton.OnSelect(new BaseEventData(EventSystem.current))
+
         isPaused = true;
     }
     private void MenuOff ()
     {
+        isPaused = false;
         Time.timeScale = m_TimeScaleRef;
         AudioListener.volume = m_VolumeRef;
         pauseMenu.gameObject.SetActive(false);
-        isPaused = false;
     }
 
     // Sera appelée en appuyant sur start
-    private void PauseMenuStatusChange ()
+    public void PauseMenuStatusChange ()
     {
-        Cursor.visible = isPaused; //force the cursor visible if anything had hidden it
         if (!isPaused)
         {
             MenuOn();
@@ -72,41 +70,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // Sera appelée en appuyant sur haut/bas quand le menu est en pause
-    private void NextChoice()
-    {
-        currentChoice++;
-        if (currentChoice >= 3) currentChoice = 0;
-        UploadPauseMenu();
-    }
-    public void PreviousChoice()
-    {
-        currentChoice--;
-        if (currentChoice <= -1) currentChoice = 2;
-        UploadPauseMenu();
-    }
-
-    // Sera appelé pour valider le choix sélectionné avec A
-    private void PauseMenuValidate()
-    {
-        switch (currentChoice)
-        {
-            case 1:
-                PauseMenuStatusChange();
-                break;
-            case 2:
-                ShowControls();
-                break;
-            default:
-                // AJOUTER ACTION DE FIN
-                break;
-        }
-    }
-
-
     private void UploadPauseMenu()
     {
-        for (int i = 0; i < 3; i++) 
+        /*for (int i = 0; i < 3; i++) 
         {
             if (i == currentChoice)
             {
@@ -117,61 +83,42 @@ public class UIManager : MonoBehaviour
                 choices[i].GetComponent<Image>().sprite = otherItemsBG;
             }
         }
+        */
     }
 
-    private void ShowControls()
+    public void ShowControls()
     {
         controls.gameObject.SetActive(true);
+        pauseMenu.gameObject.SetActive(false);
         showControls = true;
+        // Select the button
+        back.GetComponent<Button>().Select(); // Or EventSystem.current.SetSelectedGameObject(myButton.gameObject)
+        // Highlight the button
+        back.GetComponent<Button>().OnSelect(null); // Or myButton.OnSelect(new BaseEventData(EventSystem.current))
     }
-    private void HideControls()
+    public void HideControls()
     {
         controls.gameObject.SetActive(false);
+        pauseMenu.gameObject.SetActive(true);
         showControls = false;
+        EventSystem.current.SetSelectedGameObject(reprendre);
+        // Select the button
+        reprendre.GetComponent<Button>().Select(); // Or EventSystem.current.SetSelectedGameObject(myButton.gameObject)
+        // Highlight the button
+        reprendre.GetComponent<Button>().OnSelect(null); // Or myButton.OnSelect(new BaseEventData(EventSystem.current))
     }
 
-#if !MOBILE_INPUT
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
     void Update()
 	{
-        if (isStartPressed)
-        {
+	    if (Input.GetButtonUp("Start"))
+        { 
             PauseMenuStatusChange();
         }
-
-        if (isPaused)
-        {
-            if (isUpPressed && !showControls)
-            {
-                PreviousChoice();
-            }
-            if (isDownPressed && !showControls)
-            {
-                NextChoice();
-            }
-            if (isBPressed)
-            {
-                if (showControls)
-                {
-                    HideControls();
-                } else
-                {
-                    PauseMenuStatusChange();
-                }
-            }
-            if (isAPressed)
-            {
-                if (showControls)
-                {
-                    HideControls();
-                }
-                else
-                {
-                    PauseMenuValidate();
-                }
-            }
-        }
-		
 	}
-#endif
 
 }

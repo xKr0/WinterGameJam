@@ -15,7 +15,8 @@ public class ColorManager : MonoBehaviour
         Yellow,
         Cyan,
         Magenta,
-        Trash
+        Trash,
+        Pink
     }
 
     [Tooltip("Attention les textures doivent être dans l'ordre exacte de ColorList")]

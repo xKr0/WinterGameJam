@@ -29,6 +29,7 @@ public class Combinaison  {
         AddCombinaison(ColorManager.ColorList.Red, ColorManager.ColorList.Blue, ColorManager.ColorList.Magenta);
         AddCombinaison(ColorManager.ColorList.Blue, ColorManager.ColorList.Green, ColorManager.ColorList.Cyan);
         AddCombinaison(ColorManager.ColorList.White, ColorManager.ColorList.Black, ColorManager.ColorList.Gray);
+        AddCombinaison(ColorManager.ColorList.Red, ColorManager.ColorList.White, ColorManager.ColorList.Pink);
     }
 
     private void AddCombinaison(ColorManager.ColorList colorA, ColorManager.ColorList colorB, ColorManager.ColorList colorC)
