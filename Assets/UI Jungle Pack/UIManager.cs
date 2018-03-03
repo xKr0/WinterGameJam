@@ -35,6 +35,9 @@ public class UIManager : MonoBehaviour
         choices[1] = choix.Find("Regles");
         choices[2] = choix.Find("Quitter");
         pauseMenu.gameObject.SetActive(false);
+        controls.gameObject.SetActive(false);
+        HUD.gameObject.SetActive(true);
+        gameOverMenu.gameObject.SetActive(false);
     }
 
 
