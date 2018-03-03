@@ -41,16 +41,21 @@ public class TextBoxManager : MonoBehaviour {
             Debug.Log("ok"); 
             QuestAccept();
         }
-        if (Input.GetButtonUp("B") && (farmer.GetComponent<FarmerDialogManager>().waitForDialog || textBox.active))
+        /*if (Input.GetButtonUp("B") && textBox.active)
+        {
+            textBox.SetActive(false);
+        }*/
+        if (Input.GetButtonUp("B") && (farmer.GetComponent<FarmerDialogManager>().waitForDialog))
         {
             NextLine();
         }
+
     }
 
 
     public void NextLine()
     {
-        text.text = GetCurrentQuest();
+        //text.text = GetCurrentQuest();
         text.color = textColor;
         isMission = true;
         textBox.SetActive(true);
@@ -62,18 +67,8 @@ public class TextBoxManager : MonoBehaviour {
         textBox.SetActive(false);
     }
 
-    public string GetCurrentQuest()
-    {
-        string color = GetRandomColor();
-        currentQuest = csvManager.getTextQuete(color);
-        return currentQuest;
-    }
+  
 
-    public string GetRandomColor()
-    {
-        Color = csvManager.getColor();
-        string randomColor = Color[Random.Range(0,Color.Count)];
-        return randomColor;
-    }
+
 
 }

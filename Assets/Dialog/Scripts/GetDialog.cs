@@ -27,7 +27,7 @@ public class GetDialog : MonoBehaviour {
 
     public List<string> getColor()
     {
-        List<string> colorList = new List<string>(this.dicQuete.Keys);
-        return colorList;
+        List<string> colors = new List<string>(this.dicQuete.Keys);
+        return colors;
     }
 }
