@@ -13229,8 +13229,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1173307791797816}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 1, y: 3, z: 9}
-  m_LocalScale: {x: 6.1477256, y: 6.147724, z: 6.147724}
+  m_LocalPosition: {x: 19.4, y: 5.44, z: -10.19}
+  m_LocalScale: {x: 15.04432, y: 15.044315, z: 15.044315}
   m_Children:
   - {fileID: 4151298900225672}
   - {fileID: 4319187455396078}
@@ -19099,13 +19099,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1808731448660500}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.019}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.016}
   m_LocalScale: {x: 0.075679414, y: 1, z: 0.039733697}
   m_Children: []
   m_Father: {fileID: 4119575228455820}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 270, z: 90}
 --- !u!4 &4686637584120582
 Transform:
   m_ObjectHideFlags: 1
@@ -36108,7 +36108,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 296a125aa1086cc4b842ffdd31a90bb1, type: 2}
+  - {fileID: 2100000, guid: 01aa8e343b8ffa44992b43523a4fa167, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -46454,7 +46454,6 @@ MonoBehaviour:
   spawnTime: 3
   spawnPoint: {fileID: 4496267915159018}
   price: 0
-  inputForSpawnTriggered: 0
 --- !u!114 &114054205052758384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -46471,7 +46470,6 @@ MonoBehaviour:
   spawnTime: 3
   spawnPoint: {fileID: 4853591694401784}
   price: 0
-  inputForSpawnTriggered: 0
 --- !u!114 &114096375316343898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -46488,7 +46486,6 @@ MonoBehaviour:
   spawnTime: 3
   spawnPoint: {fileID: 4210425624412246}
   price: 0
-  inputForSpawnTriggered: 0
 --- !u!114 &114318746362838564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -46505,7 +46502,6 @@ MonoBehaviour:
   spawnTime: 3
   spawnPoint: {fileID: 4115993709108186}
   price: 0
-  inputForSpawnTriggered: 0
 --- !u!114 &114442536266625912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -46522,7 +46518,6 @@ MonoBehaviour:
   spawnTime: 3
   spawnPoint: {fileID: 4080222302282328}
   price: 0
-  inputForSpawnTriggered: 0
 --- !u!114 &114594688276836628
 MonoBehaviour:
   m_ObjectHideFlags: 1
