@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  jumpSpeed: 5
+  jumpSpeed: 4
   anim: {fileID: 1372917369}
   rigidbody: {fileID: 1372917371}
 --- !u!54 &1372917371

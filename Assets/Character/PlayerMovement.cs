@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         Move (moveHorizontal, moveVertical);
         Animating (moveHorizontal, moveVertical);
 
-        if (Input.GetButtonDown("A"))
+        if (Input.GetButtonUp("A"))
         {
             Jump();
         }
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 velocity = rigidbody.velocity;
         Debug.Log(velocity.y);
 
-        if (velocity.y <= 0.0f)
+        if (Mathf.Abs(velocity.y) <= 0.001f)
         {
             velocity.y = jumpSpeed;
             rigidbody.velocity = velocity;
