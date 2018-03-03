@@ -9,6 +9,9 @@ public class ColorModule : MonoBehaviour {
     Material material;
 
     [SerializeField]
+    ParticleSystem particleExplosion;
+
+    [SerializeField]
     ColorManager.ColorList myColor;
 
     public ColorManager.ColorList MyColor {
@@ -28,7 +31,9 @@ public class ColorModule : MonoBehaviour {
         // if it's another sheep
         if (collision.gameObject.tag.Equals(this.gameObject.tag))
         {
+            particleExplosion.Play();
             material.SetColor("_Color", Combinaison.Instance.Combine(myColor, collision.gameObject.GetComponent<ColorModule>().MyColor));
+
         }        
     }
 }
