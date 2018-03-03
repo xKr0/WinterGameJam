@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] Rigidbody rgbd;
     Vector3 lastMove;
+	bool isPnjInteraction = false;
 
     void Start()
     {
@@ -26,6 +27,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+
+		if (isPnjInteraction && Input.GetButtonUp ("B")) {
+			PnjInteraction ();
+		}
     }
 
     void Jump()
@@ -74,4 +79,17 @@ public class PlayerMovement : MonoBehaviour
         // Tell the animator whether or not the player is walking.
         anim.SetBool ("isRunning", running);
     }
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.gameObject.tag == "PNJ") isPnjInteraction = true;
+	}
+
+	void OnTriggerExit(Collider other) {
+		if(other.gameObject.tag == "PNJ") isPnjInteraction = false;
+	}
+
+	void PnjInteraction(){
+		Debug.Log ("Interaction PNJ");
+	}
 }
