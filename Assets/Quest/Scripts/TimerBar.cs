@@ -9,6 +9,9 @@ public class TimerBar : MonoBehaviour {
     private float initialValue;
     [SerializeField] private Image fill;
     [SerializeField] private GameObject quest;
+    public Color col;
+    private int red = 0;
+    private int green = 255;
     // Use this for initialization
     void Start()
     {
@@ -20,7 +23,9 @@ public class TimerBar : MonoBehaviour {
     void Update()
     {
         slider.value = slider.value - (0.035f * Time.deltaTime);
-        //fill.color = Color.red;
+        /*red++;
+        green--;
+        fill.color = new Color(red, green,0);*/
         if (slider.value <= initialValue/10)
         {
             fill.color = Color.red;
@@ -34,7 +39,6 @@ public class TimerBar : MonoBehaviour {
 
     public void AcceptQuest()
     {
-        Instantiate(quest);
         quest.SetActive(true);
         Debug.Log("OK");
     }
