@@ -42,13 +42,12 @@ MonoBehaviour:
   HUD: {fileID: 0}
   gameOverMenu: {fileID: 0}
   controls: {fileID: 0}
+  reprendre: {fileID: 0}
+  controles: {fileID: 0}
+  quitter: {fileID: 0}
+  back: {fileID: 0}
   currentItemBG: {fileID: 21300002, guid: 12558acad19bfd048b7cfd99ffeab067, type: 3}
   otherItemsBG: {fileID: 21300006, guid: 12558acad19bfd048b7cfd99ffeab067, type: 3}
-  isStartPressed: 0
-  isAPressed: 0
-  isBPressed: 0
-  isUpPressed: 0
-  isDownPressed: 0
 --- !u!224 &224402816505905952
 RectTransform:
   m_ObjectHideFlags: 1
