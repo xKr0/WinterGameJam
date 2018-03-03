@@ -13,6 +13,10 @@ public class PlayerGrab : MonoBehaviour {
 	
 	void Update() 
     {
+        float l = Input.GetAxis("LeftTrigger");
+        float r = Input.GetAxis("RightTrigger");
+        Debug.Log(l + " / " + r);
+
         if (!isHolding)
         {
             if (Input.GetButtonUp("X"))
