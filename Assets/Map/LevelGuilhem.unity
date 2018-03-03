@@ -500,6 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3117807e0b86c9c419f5d9314cdc5548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_SHEEP: 15
 --- !u!4 &1043747265
 Transform:
   m_ObjectHideFlags: 0
@@ -561,6 +562,15 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 4959109465421280, guid: 7cee5c022112f5b41a464e91b0f9d4bd, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114340204557862332, guid: 7cee5c022112f5b41a464e91b0f9d4bd,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 92063321}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cee5c022112f5b41a464e91b0f9d4bd, type: 2}
   m_IsPrefabParent: 0

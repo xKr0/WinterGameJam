@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour {
     public float smoothing = 1f; // a little bit of lag to follow
     public float RotateSpeed = 1.0f;
     private float x = 0, y = 0;
-    private float height = 10, followDistance = -10;
+    private float height = 15, followDistance = -15;
 
     Vector3 offset; // offset between the player and the camera
 
