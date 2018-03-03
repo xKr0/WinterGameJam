@@ -150,13 +150,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4717952396104160, guid: 7cee5c022112f5b41a464e91b0f9d4bd, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114221084852330452, guid: 7cee5c022112f5b41a464e91b0f9d4bd,
         type: 2}
       propertyPath: target
       value: 
-      objectReference: {fileID: 1177650799}
+      objectReference: {fileID: 1585808589}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cee5c022112f5b41a464e91b0f9d4bd, type: 2}
   m_IsPrefabParent: 0
@@ -197,7 +197,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4362995222750486, guid: e6eb06db0a759d540a126c455fbc38ce, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114559333662196442, guid: e6eb06db0a759d540a126c455fbc38ce,
         type: 2}
@@ -272,11 +272,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!4 &1177650799 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4794097556575428, guid: a3f11ad494cf4bf4381b920c2fd44f5b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1181957577}
 --- !u!1001 &1181957577
 Prefab:
   m_ObjectHideFlags: 0
@@ -364,6 +359,38 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 0.00028154138
       objectReference: {fileID: 0}
+    - target: {fileID: 4953624506723948, guid: a3f11ad494cf4bf4381b920c2fd44f5b, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953624506723948, guid: a3f11ad494cf4bf4381b920c2fd44f5b, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953624506723948, guid: a3f11ad494cf4bf4381b920c2fd44f5b, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54794154796347400, guid: a3f11ad494cf4bf4381b920c2fd44f5b,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586720245890584, guid: a3f11ad494cf4bf4381b920c2fd44f5b,
+        type: 2}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586720245890584, guid: a3f11ad494cf4bf4381b920c2fd44f5b,
+        type: 2}
+      propertyPath: jumpSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 54794154796347400, guid: a3f11ad494cf4bf4381b920c2fd44f5b,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3f11ad494cf4bf4381b920c2fd44f5b, type: 2}
   m_IsPrefabParent: 0
@@ -446,7 +473,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 21.6, y: -34.589, z: 0.012}
 --- !u!1001 &1393152606
 Prefab:
@@ -490,6 +517,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80468d5a009f93b41bae61d87dd704f7, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1585808589 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4953624506723948, guid: a3f11ad494cf4bf4381b920c2fd44f5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1181957577}
 --- !u!1001 &1622786488
 Prefab:
   m_ObjectHideFlags: 0
@@ -527,7 +559,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4362995222750486, guid: e6eb06db0a759d540a126c455fbc38ce, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114559333662196442, guid: e6eb06db0a759d540a126c455fbc38ce,
         type: 2}
@@ -583,7 +615,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fadddc63520db414bbc9126cbf4743ad, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fadddc63520db414bbc9126cbf4743ad, type: 3}
       propertyPath: m_LocalScale.x
