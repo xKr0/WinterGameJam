@@ -8,6 +8,7 @@ public class TimerBar : MonoBehaviour {
     [SerializeField] private Slider slider;
     private float initialValue;
     [SerializeField] private Image fill;
+    [SerializeField] private GameObject quest;
     // Use this for initialization
     void Start()
     {
@@ -33,6 +34,8 @@ public class TimerBar : MonoBehaviour {
 
     public void AcceptQuest()
     {
-        Instantiate(this);
+        Instantiate(quest);
+        quest.SetActive(true);
+        Debug.Log("OK");
     }
 }
