@@ -36,7 +36,6 @@ public class ColorManager : MonoBehaviour
 
     public ColorList Combine(ColorList colorA, ColorList colorB)
     {
-        Debug.Log(combinaison);
         return combinaison.Combine(colorA, colorB);
     }
 

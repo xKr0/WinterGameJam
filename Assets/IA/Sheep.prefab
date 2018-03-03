@@ -333,7 +333,7 @@ Transform:
   m_GameObject: {fileID: 1266403937976234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.18, y: 0.0000009536743, z: -4.32}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4147022962562670}
   - {fileID: 4558215940962692}
@@ -496,9 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleExplosion: {fileID: 198221631263921120}
-  myColor: 1
-  colorManager: {fileID: 114590732525546982, guid: 120afa2d9eb100f42aac3a73b0c71d1e,
-    type: 2}
+  myColor: 4
 --- !u!114 &114601473723203500
 MonoBehaviour:
   m_ObjectHideFlags: 1

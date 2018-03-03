@@ -12,7 +12,6 @@ public class ColorModule : MonoBehaviour {
     [SerializeField]
     ColorManager.ColorList myColor;
 
-    [SerializeField]
     ColorManager colorManager;
 
     public ColorManager.ColorList MyColor {
@@ -21,7 +20,9 @@ public class ColorModule : MonoBehaviour {
     }
 
 	// Use this for initialization
-	void Start () {        
+	void Start () {
+        colorManager = FindObjectOfType<ColorManager>();
+
         material = GetComponentInChildren<Renderer>().material;
 
         SetSheepColor(myColor);
