@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4827305106376942}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4572348159503510}
   - component: {fileID: 136243361342090474}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TriggerSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 23594670313706262}
   - component: {fileID: 64878465877440988}
   - component: {fileID: 114634687023062352}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SheepSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,8 +81,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1744624898511256}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -13, y: 19, z: -22}
-  m_LocalScale: {x: 0.5, y: 0.5000005, z: 0.5000005}
+  m_LocalPosition: {x: 0, y: 19, z: -22}
+  m_LocalScale: {x: 0.5, y: 0.50000024, z: 0.50000024}
   m_Children:
   - {fileID: 4827305106376942}
   - {fileID: 4572348159503510}
@@ -116,7 +116,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1b71d97f51a7ad54c9c05107ff1e379d, type: 2}
+  - {fileID: 2100000, guid: 68ef722e47eda494a904149105aac692, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -169,9 +169,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheep: {fileID: 1266403937976234, guid: e6eb06db0a759d540a126c455fbc38ce, type: 2}
-  colorEnum: 1
+  colorEnum: 2
   spawnTime: 3
   spawnPoint: {fileID: 4827305106376942}
+  price: 0
+  inputForSpawnTriggered: 0
 --- !u!136 &136243361342090474
 CapsuleCollider:
   m_ObjectHideFlags: 1
