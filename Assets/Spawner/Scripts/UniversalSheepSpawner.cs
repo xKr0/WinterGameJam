@@ -23,6 +23,9 @@ public class UniversalSheepSpawner : MonoBehaviour {
     bool canBuy = false;
     LevelManager levelManager;
 
+    [SerializeField]
+    private float propulsion = 1000;
+
     void Start()
     {
         levelManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<LevelManager>();
@@ -45,7 +48,14 @@ public class UniversalSheepSpawner : MonoBehaviour {
     public void Spawn(){
         LevelManager.NB_SHEEPS++;
         sheep.GetComponent<ColorModule>().MyColor = colorEnum;
+
         GameObject o = Instantiate(sheep, spawnPoint.position, spawnPoint.rotation);
+                
+        o.GetComponent<SheepAgent>().enabled = false;
+
+        o.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * propulsion);
+
+        o.GetComponent<ResetBehaviour>().enabled = true;
     }
 
      void OnTriggerStay(Collider collider){
