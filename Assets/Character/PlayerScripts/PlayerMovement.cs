@@ -38,8 +38,12 @@ public class PlayerMovement : MonoBehaviour
     void Move ()
     {
         Vector3 movement = new Vector3(PlayerSpec.moveH, 0.0f, PlayerSpec.moveV);
+		movement = Camera.main.transform.TransformDirection(movement);
+		movement.y = 0.0f;
         Turn(movement);
         transform.Translate (movement * speed * Time.deltaTime, Space.World);
+		//Vector3 targetDirection = new Vector3(horizontal, 0f, vertical);
+
     }
 
     void Turn(Vector3 movement)
