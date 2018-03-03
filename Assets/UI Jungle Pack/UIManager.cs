@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
         choices[0] = choix.Find("Reprendre");
         choices[1] = choix.Find("Regles");
         choices[2] = choix.Find("Quitter");
+        pauseMenu.gameObject.SetActive(false);
     }
 
 
@@ -43,19 +44,20 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
         m_VolumeRef = AudioListener.volume;
         AudioListener.volume = 0f;
+        pauseMenu.gameObject.SetActive(true);
         isPaused = true;
     }
     private void MenuOff ()
     {
         Time.timeScale = m_TimeScaleRef;
         AudioListener.volume = m_VolumeRef;
+        pauseMenu.gameObject.SetActive(false);
         isPaused = false;
     }
 
     // Sera appelée en appuyant sur start
     private void PauseMenuStatusChange ()
     {
-        isPaused = !isPaused;
         Cursor.visible = isPaused; //force the cursor visible if anything had hidden it
         if (!isPaused)
         {
