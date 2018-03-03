@@ -5,8 +5,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float jumpSpeed;
     [SerializeField] Animator anim;
-    [SerializeField] Rigidbody rigidbody;
+    [SerializeField] Rigidbody rgbd;
     Vector3 lastMove;
+	bool isPnjInteraction = false;
 
     void Start()
     {
@@ -22,21 +23,25 @@ public class PlayerMovement : MonoBehaviour
         Move (moveHorizontal, moveVertical);
         Animating (moveHorizontal, moveVertical);
 
-        if (Input.GetButtonDown("A"))
+        if (Input.GetButtonUp("A"))
         {
             Jump();
         }
+
+		if (isPnjInteraction && Input.GetButtonUp ("B")) {
+			PnjInteraction ();
+		}
     }
 
     void Jump()
     {
-        Vector3 velocity = rigidbody.velocity;
+        Vector3 velocity = rgbd.velocity;
         Debug.Log(velocity.y);
 
-        if (velocity.y <= 0.0f)
+        if (Mathf.Abs(velocity.y) <= 0.001f)
         {
             velocity.y = jumpSpeed;
-            rigidbody.velocity = velocity;
+            rgbd.velocity = velocity;
         }
     }
 
@@ -74,4 +79,17 @@ public class PlayerMovement : MonoBehaviour
         // Tell the animator whether or not the player is walking.
         anim.SetBool ("isRunning", running);
     }
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.gameObject.tag == "PNJ") isPnjInteraction = true;
+	}
+
+	void OnTriggerExit(Collider other) {
+		if(other.gameObject.tag == "PNJ") isPnjInteraction = false;
+	}
+
+	void PnjInteraction(){
+		Debug.Log ("Interaction PNJ");
+	}
 }
