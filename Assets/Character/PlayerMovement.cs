@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         Vector3 velocity = rgbd.velocity;
-        Debug.Log(velocity.y);
 
         if (Mathf.Abs(velocity.y) <= 0.001f)
         {

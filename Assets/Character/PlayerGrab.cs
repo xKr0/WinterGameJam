@@ -6,13 +6,14 @@ public class PlayerGrab : MonoBehaviour {
 
     [SerializeField] float maxDetectDist;
     [SerializeField] float distFromPlayer;
+    [SerializeField] float speedThrow;
 
     private Collider carriedSheep = null;
 
     private bool isHolding = false;
 	
 	void Update() 
-    {
+    { 
         if (!isHolding)
         {
             if (Input.GetButtonUp("X"))
@@ -32,6 +33,20 @@ public class PlayerGrab : MonoBehaviour {
             {
                 LetGo();
             }
+            else
+            {
+                float left = Input.GetAxis("LeftTrigger");
+                float right = Input.GetAxis("RightTrigger");
+
+                if (left > 0.0f)
+                {
+                    Throw();
+                }
+                else if (right > 0.0f)
+                {
+                    Throw();
+                }
+            }
         }
 	}
 
@@ -44,19 +59,19 @@ public class PlayerGrab : MonoBehaviour {
         {
             if (hit.collider.tag == "Sheep")
             {
-                Grab(hit.collider);
+                carriedSheep = hit.collider;
+                Grab();
             }
         }
     }
      
-    void Grab(Collider col)
+    void Grab()
     {
         isHolding = true;
-        carriedSheep = col;
 
-        col.GetComponent<SheepAgent>().enabled = false;
-        col.GetComponent<Animator>().SetBool("Running", false);
-        col.attachedRigidbody.isKinematic = true;
+        carriedSheep.GetComponent<SheepAgent>().enabled = false;
+        carriedSheep.GetComponent<Animator>().SetBool("Running", false);
+        carriedSheep.attachedRigidbody.isKinematic = true;
     }
 
     void LetGo()
@@ -64,6 +79,16 @@ public class PlayerGrab : MonoBehaviour {
         carriedSheep.attachedRigidbody.isKinematic = false;
         carriedSheep.GetComponent<Animator>().SetBool("Running", true);
         carriedSheep.GetComponent<SheepAgent>().enabled = true;
+
+        isHolding = false;
+        carriedSheep = null;
+    }
+
+    void Throw()
+    {
+        carriedSheep.attachedRigidbody.isKinematic = false;
+        carriedSheep.attachedRigidbody.AddForce(transform.forward * speedThrow);
+        carriedSheep.GetComponent<ResetBehaviour>().enabled = true;
 
         isHolding = false;
         carriedSheep = null;
