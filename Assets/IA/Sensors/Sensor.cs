@@ -58,7 +58,7 @@ public class Sensor
     {
         if (source != null)
         {
-            Gizmos.color = Color.red;
+            //Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(Origin, radius);
         }
     }

@@ -281,8 +281,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  jumpSpeed: 5
   anim: {fileID: 1372917369}
-  playerRigidbody: {fileID: 1372917371}
+  rigidbody: {fileID: 1372917371}
 --- !u!54 &1372917371
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -427,7 +428,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fadddc63520db414bbc9126cbf4743ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fadddc63520db414bbc9126cbf4743ad, type: 3}
       propertyPath: m_LocalPosition.z
