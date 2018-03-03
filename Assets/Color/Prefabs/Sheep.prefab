@@ -482,7 +482,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleExplosion: {fileID: 198826032865786940}
   myColor: 2
-  colorManager: {fileID: 0}
+  colorManager: {fileID: 114590732525546982, guid: 120afa2d9eb100f42aac3a73b0c71d1e,
+    type: 2}
 --- !u!114 &114906207919527558
 MonoBehaviour:
   m_ObjectHideFlags: 1

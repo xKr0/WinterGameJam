@@ -34,7 +34,7 @@ public class ColorManager : MonoBehaviour
         return colorTexture[(int)colorList];
     }
 
-    public ColorList Combine(ColorManager.ColorList colorA, ColorManager.ColorList colorB)
+    public ColorList Combine(ColorList colorA, ColorList colorB)
     {
         Debug.Log(combinaison);
         return combinaison.Combine(colorA, colorB);

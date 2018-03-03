@@ -496,8 +496,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleExplosion: {fileID: 198221631263921120}
-  myColor: 6
-  colorManager: {fileID: 0}
+  myColor: 1
+  colorManager: {fileID: 114590732525546982, guid: 120afa2d9eb100f42aac3a73b0c71d1e,
+    type: 2}
 --- !u!114 &114601473723203500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -509,7 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc44d6b1f3798c4bb13f0f033f7162e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForce: 2
+  maxForce: 1
   ownTransform: {fileID: 4362995222750486}
   wander:
     power: 2.25
