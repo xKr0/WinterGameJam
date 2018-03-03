@@ -24,4 +24,12 @@ public class LevelManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void AddMoney(int amount){
+        money += amount;
+    }
+
+    public void RemoveMoney(int amount){
+        money -= amount;
+    }
 }
