@@ -9,14 +9,13 @@ public class PlayerGrab : MonoBehaviour {
     [SerializeField] float speedThrow;
 
     private Collider carriedSheep = null;
-
     private bool isHolding = false;
 	
 	void Update() 
     { 
         if (!isHolding)
         {
-            if (Input.GetButtonUp("X"))
+            if (PlayerSpec.pressGrab)
             {
                 CheckTagInRange();
             }
@@ -27,24 +26,22 @@ public class PlayerGrab : MonoBehaviour {
             {
                 carriedSheep.transform.position = transform.position + transform.forward * distFromPlayer;
                 carriedSheep.transform.rotation = Quaternion.LookRotation(transform.forward);
-            }
 
-            if (Input.GetButtonUp("X"))
-            {
-                LetGo();
-            }
-            else
-            {
-                float left = Input.GetAxis("LeftTrigger");
-                float right = Input.GetAxis("RightTrigger");
-
-                if (left > 0.0f)
+                if (PlayerSpec.pressGrab)
                 {
-                    Throw();
+                    LetGo();
                 }
-                else if (right > 0.0f)
+                else
                 {
-                    Throw();
+                    if (PlayerSpec.leftTrigger > 0.0f)
+                    {
+                        Throw();
+                    }
+                    else if (PlayerSpec.rightTrigger > 0.0f)
+                    {
+                        Throw();
+                    }
+
                 }
             }
         }

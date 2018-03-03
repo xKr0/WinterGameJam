@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 136071701891435144}
   - component: {fileID: 114195168694851062}
   - component: {fileID: 114256719201115232}
+  - component: {fileID: 114968126439240494}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -2698,7 +2699,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1267634563121944}
-  m_LocalRotation: {x: -0.0059114355, y: -0.6794483, z: 0.73369926, w: -0.0006656347}
+  m_LocalRotation: {x: -0.005911435, y: -0.6794483, z: 0.73369926, w: -0.0006656347}
   m_LocalPosition: {x: -0.14276123, y: 0.032653574, z: 0.13977996}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_Children: []
@@ -2712,7 +2713,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1023558316005752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16008401, y: 1.19, z: -5.232945}
+  m_LocalPosition: {x: 0, y: 1.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4257005822170602}
@@ -3112,7 +3113,7 @@ MonoBehaviour:
   speed: 3
   jumpSpeed: 4
   anim: {fileID: 95798335964932538}
-  rgbd: {fileID: 0}
+  rgbd: {fileID: 54953094241101076}
 --- !u!114 &114256719201115232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3125,7 +3126,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDetectDist: 1.5
-  distFromPlayer: 0.9
+  distFromPlayer: 1
+  speedThrow: 700
+--- !u!114 &114968126439240494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1023558316005752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7435cdc08fc094e922f2a5d3a431e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136071701891435144
 CapsuleCollider:
   m_ObjectHideFlags: 1
