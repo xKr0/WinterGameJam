@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1539100085928622}
+  m_IsPrefabParent: 1
+--- !u!1 &1539100085928622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4957156326538958}
+  - component: {fileID: 114590732525546982}
+  m_Layer: 0
+  m_Name: ColorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4957156326538958
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1539100085928622}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.1125712, y: 0.35160208, z: -0.63265896}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114590732525546982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1539100085928622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbdf578dbdbd7f4592e4d4514c0aee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorTexture:
+  - {fileID: 2800000, guid: b66fd1a9d39fb85419c57018202fc38e, type: 3}
+  - {fileID: 2800000, guid: 4d999be6bec779c42b7b5d6b45cbee3d, type: 3}
+  - {fileID: 2800000, guid: dcc28d6ec19c71a40b562b8488e665ec, type: 3}
+  - {fileID: 2800000, guid: 0bb835171823da4458f14c0d82576d64, type: 3}
+  - {fileID: 2800000, guid: 3ab52cd6ebef3444ab8793c958629191, type: 3}
+  - {fileID: 2800000, guid: 01dabe4d463f5ec489c5642dd45d6b1b, type: 3}
+  - {fileID: 2800000, guid: 810bd869087f7614588a1bcbf35980fd, type: 3}
+  - {fileID: 2800000, guid: 9029da209c6409243bf3a4d0adabf104, type: 3}
+  - {fileID: 2800000, guid: eec66835ccfd1ce42a3c4a229f234c85, type: 3}
+  - {fileID: 2800000, guid: 72118169768f7f047b7388a40c67d796, type: 3}

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ColorModule : MonoBehaviour {
 
-    Combinaison combinaison;
-
     Material material;
 
     [SerializeField]
@@ -13,6 +11,9 @@ public class ColorModule : MonoBehaviour {
 
     [SerializeField]
     ColorManager.ColorList myColor;
+
+    [SerializeField]
+    ColorManager colorManager;
 
     public ColorManager.ColorList MyColor {
         get { return myColor; }
@@ -23,17 +24,24 @@ public class ColorModule : MonoBehaviour {
 	void Start () {        
         material = GetComponentInChildren<Renderer>().material;
 
-        material.SetColor("_Color", ColorManager.Instance.GetColorByEnum(myColor));
+        SetSheepColor(myColor);
+    }
+
+    void SetSheepColor(ColorManager.ColorList color)
+    {
+        this.myColor = color;
+        material.SetTexture("_MainTex", colorManager.GetColorByEnum(color));
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         // if it's another sheep
-        if (collision.gameObject.tag.Equals(this.gameObject.tag))
+        if (collision.gameObject.tag.Equals(this.gameObject.tag) && collision.gameObject.GetComponent<ColorModule>().MyColor != myColor)
         {
             particleExplosion.Play();
-            material.SetColor("_Color", Combinaison.Instance.Combine(myColor, collision.gameObject.GetComponent<ColorModule>().MyColor));
-
+            ColorManager.ColorList color = colorManager.Combine(myColor, collision.gameObject.GetComponent<ColorModule>().MyColor);
+            SetSheepColor(color);
+            collision.gameObject.GetComponent<ColorModule>().SetSheepColor(color);
         }        
     }
 }
