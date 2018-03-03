@@ -22,18 +22,20 @@ public class UniversalSheepSpawner : MonoBehaviour {
 
     public bool inputForSpawnTriggered = false;
 
+    bool canBuy = false;
+
     LevelManager levelManager;
 
     void Start()
     {
         levelManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<LevelManager>();
         // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
-        InvokeRepeating("SpawnAtStart", spawnTime, spawnTime);
+        //InvokeRepeating("SpawnAtStart", spawnTime, spawnTime);
     }
 
     void Update(){
         inputForSpawnTriggered = Input.GetButtonUp("Y");
-        Debug.Log(inputForSpawnTriggered);
+
     }
 
     void SpawnAtStart()
@@ -54,7 +56,7 @@ public class UniversalSheepSpawner : MonoBehaviour {
         GameObject o = Instantiate(sheep, spawnPoint.position, spawnPoint.rotation);
     }
 
-    public void OnTriggerStays(Collider collider){
+     void OnTriggerStay(Collider collider){
         if (inputForSpawnTriggered && collider.gameObject.tag.Equals("Player"))
         {
             if (price <= levelManager.Money)
@@ -69,5 +71,5 @@ public class UniversalSheepSpawner : MonoBehaviour {
             }
         }
     }
-        
+              
 }
