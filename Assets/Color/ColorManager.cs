@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Color
+public class ColorManager
 {
     enum ColorList
     {
@@ -17,5 +17,6 @@ public class Color
         Magenta
     }
 
+    Dictionary<ColorList, >
 
 }
