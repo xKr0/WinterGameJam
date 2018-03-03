@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  smoothing: 1
+  smoothing: 20
 --- !u!124 &124881251241903636
 Behaviour:
   m_ObjectHideFlags: 1
