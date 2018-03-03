@@ -24,9 +24,14 @@ public class TextBoxManager : MonoBehaviour {
 
     public GameObject AcceptQuest;
 
+    [SerializeField] private GetDialog csvManager;
+
+    public string currentQuest;
+
 	// Use this for initialization
 	void Start () {
 
+        csvManager = csvManager.GetComponent<GetDialog>();
         textBox.SetActive(false);
         
 		if (textFile != null)
@@ -93,9 +98,13 @@ public class TextBoxManager : MonoBehaviour {
 
     public void NextLine()
     {
-        text.text = textLines[currentLine];
+        //text.text = textLines[currentLine];
+        //text.text = csvManager.getTextQuete("Rouge");
+        text.text = GetCurrentQuest();
         text.color = textColor;
-        if (textLines[currentLine].Contains(";"))
+        isMission = true;
+        textBox.SetActive(true);
+        /*if (textLines[currentLine].Contains(";"))
         {
             farmer.GetComponent<FarmerDialogManager>().BeginMission();
             isMission = false;
@@ -105,8 +114,8 @@ public class TextBoxManager : MonoBehaviour {
         {
             isMission = true;
             textBox.SetActive(true);
-        }
-        currentLine++;
+        }*/
+        //currentLine++;
 
     }
 
@@ -114,6 +123,12 @@ public class TextBoxManager : MonoBehaviour {
     {
         acceptMission = true;
         textBox.SetActive(false);
+    }
+
+    public string GetCurrentQuest()
+    {
+        currentQuest = csvManager.getTextQuete("Rouge");
+        return currentQuest;
     }
 
 }
