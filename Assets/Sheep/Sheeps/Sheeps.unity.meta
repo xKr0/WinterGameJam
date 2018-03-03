@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef8d07b728ef61545a1f5b7fba2ac3c8
+guid: a17fa70d2fde2ff4a8327063c3cf9b0b
 labels:
 - SDRPGPack2
 - SDRPGPack3
@@ -23,6 +23,7 @@ labels:
 timeCreated: 1457867671
 licenseType: Store
 DefaultImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
