@@ -24,4 +24,10 @@ public class GetDialog : MonoBehaviour {
 		int rdm = Random.Range (0, dicDialog[expression].Count);
 		return dicDialog [expression][rdm];
 	}
+
+    public List<string> getColor()
+    {
+        List<string> colorList = new List<string>(this.dicQuete.Keys);
+        return colorList;
+    }
 }
