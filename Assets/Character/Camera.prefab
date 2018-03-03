@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   smoothing: 20
-  RotateSpeed: 1
+  RotateSpeed: 3
 --- !u!124 &124396095937460018
 Behaviour:
   m_ObjectHideFlags: 1

@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour {
 
     public Transform target;
     public float smoothing = 1f; // a little bit of lag to follow
-    public float RotateSpeed = 1.0f;
+    public float RotateSpeed = 3.0f;
     private float x = 0, y = 0;
     private float height = 15, followDistance = -15;
 
