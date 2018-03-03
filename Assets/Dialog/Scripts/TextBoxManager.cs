@@ -22,9 +22,9 @@ public class TextBoxManager : MonoBehaviour {
         textBox.SetActive(false);
         
 		if (textFile != null)
-        {
-            Debug.Log(textFile.text);
+        {            
             textLines = (textFile.text.Split('\n'));
+            Debug.Log(textFile.text);
         }
 
         if (endAtLine == 0)
@@ -50,9 +50,6 @@ public class TextBoxManager : MonoBehaviour {
         {
             textBox.SetActive(false);
         }
-
     }
-
-   
 
 }
