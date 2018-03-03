@@ -61,7 +61,7 @@ public class UniversalSheepSpawner : MonoBehaviour {
         {
             if (price <= levelManager.Money)
             {
-                //play gliggling sound
+               
                 levelManager.RemoveMoney(price);
                 Spawn();
             }

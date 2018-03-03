@@ -26,10 +26,12 @@ public class LevelManager : MonoBehaviour {
 	}
 
     public void AddMoney(int amount){
+        //play gliggling sound
         money += amount;
     }
 
     public void RemoveMoney(int amount){
+        //play gliggling sound
         money -= amount;
     }
 }
