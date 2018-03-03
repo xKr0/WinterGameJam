@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour {
     public float smoothing = 1f; // a little bit of lag to follow
     public float RotateSpeed = 1.0f;
     private float x = 0, y = 0;
-    private float height = 10, followDistance = -10;
+    private float height = 15, followDistance = -15;
 
     Vector3 offset; // offset between the player and the camera
 
@@ -19,8 +19,12 @@ public class CameraFollow : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        offset = Quaternion.AngleAxis(Input.GetAxis("RightStickHorizontal") * RotateSpeed, Vector3.up) * offset;
-        offset = Quaternion.AngleAxis(Input.GetAxis("RightStickVertical") * RotateSpeed, Vector3.right) * offset;
+        y = Input.GetAxis("RightStickVertical") * RotateSpeed;
+        x = Input.GetAxis("RightStickHorizontal") * RotateSpeed;
+        
+
+        offset = Quaternion.AngleAxis(x, Vector3.up) * offset;
+        //offset = Quaternion.AngleAxis(y, Vector3.right) * offset;
         
         Vector3 targetCamPos = offset + target.position;
 

@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Map/Launch.unity
+    guid: 259cb2044c086c9458cfde0e238e9bf5
+  - enabled: 1
+    path: Assets/Map/LevelGuilhem.unity
+    guid: 398f4d7e171826a43a62f1a657d4b30d

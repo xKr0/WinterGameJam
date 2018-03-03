@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour {
 
     public static bool ONCE_ALL_SPAWNED = false;
 
-    public static int MAX_SHEEP = 15;
+    public int MAX_SHEEP = 15;
 	// Use this for initialization
 
     int money = 50;

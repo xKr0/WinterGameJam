@@ -376,14 +376,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBox: {fileID: 1974989834}
   text: {fileID: 1974989835}
-  textFile: {fileID: 4900000, guid: 64fb076c66f23de48bc01434acbf0e28, type: 3}
-  textLines: []
-  currentLine: 0
-  endAtLine: 0
   farmer: {fileID: 1246096737}
   textColor: {r: 1, g: 0.52205884, b: 0.52205884, a: 0}
   acceptMission: 0
-  AcceptQuest: {fileID: 0}
+  csvManager: {fileID: 0}
 --- !u!4 &107845611
 Transform:
   m_ObjectHideFlags: 0
@@ -1409,10 +1405,6 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1359086412}
-    - target: {fileID: 1788872862357704, guid: 35b0f32f7cbcdab4582ffa3e35e8718f, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35b0f32f7cbcdab4582ffa3e35e8718f, type: 2}
   m_IsPrefabParent: 0
