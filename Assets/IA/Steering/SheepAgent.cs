@@ -15,7 +15,7 @@ public class SheepAgent : Agent
             {
                 wander,
             });
-
+        GetComponent<Animator>().SetBool("Running", true);
     }
 
     void Update()
