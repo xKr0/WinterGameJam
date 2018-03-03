@@ -4,13 +4,31 @@ using UnityEngine;
 
 public class ColorModule : MonoBehaviour {
 
+    Combinaison combinaison;
+
+    Material material;
+
+    [SerializeField]
+    ColorManager.ColorList myColor;
+
+    public ColorManager.ColorList MyColor {
+        get { return myColor; }
+        set { myColor = value; }
+    }
+
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Start () {        
+        material = GetComponentInChildren<Renderer>().material;
+
+        material.SetColor("_Color", ColorManager.Instance.GetColorByEnum(myColor));
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // if it's another sheep
+        if (collision.gameObject.tag.Equals(this.gameObject.tag))
+        {
+            material.SetColor("_Color", Combinaison.Instance.Combine(myColor, collision.gameObject.GetComponent<ColorModule>().MyColor));
+        }        
+    }
 }

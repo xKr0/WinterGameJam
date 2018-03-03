@@ -52,4 +52,9 @@ public class ColorManager
     {
         return ColorEnumToColor.Count;
     }
+
+    public Color GetColorByEnum(ColorList colorList)
+    {
+        return ColorEnumToColor[colorList];
+    }
 }
