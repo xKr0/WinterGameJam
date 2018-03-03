@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
 
         PlayerSpec.pressJump = Input.GetButtonUp("A");
         PlayerSpec.pressGrab = Input.GetButtonUp("X");
+        PlayerSpec.pressSpawn = Input.GetButtonUp("Y");
         PlayerSpec.pressTalk = Input.GetButtonUp("B");
 
         PlayerSpec.leftTrigger = Input.GetAxis("LeftTrigger");

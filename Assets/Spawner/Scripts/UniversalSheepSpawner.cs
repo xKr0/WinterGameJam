@@ -20,10 +20,7 @@ public class UniversalSheepSpawner : MonoBehaviour {
     [Tooltip("Price to spawn this kind of sheep")]
     [SerializeField] public int price = 5;
 
-    public bool inputForSpawnTriggered = false;
-
     bool canBuy = false;
-
     LevelManager levelManager;
 
     void Start()
@@ -31,11 +28,6 @@ public class UniversalSheepSpawner : MonoBehaviour {
         levelManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<LevelManager>();
         // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
         //InvokeRepeating("SpawnAtStart", spawnTime, spawnTime);
-    }
-
-    void Update(){
-        inputForSpawnTriggered = Input.GetButtonUp("Y");
-
     }
 
     void SpawnAtStart()
@@ -57,11 +49,10 @@ public class UniversalSheepSpawner : MonoBehaviour {
     }
 
      void OnTriggerStay(Collider collider){
-        if (inputForSpawnTriggered && collider.gameObject.tag.Equals("Player"))
+        if (PlayerSpec.pressSpawn && collider.gameObject.tag.Equals("Player"))
         {
             if (price <= levelManager.Money)
             {
-               
                 levelManager.RemoveMoney(price);
                 Spawn();
             }
