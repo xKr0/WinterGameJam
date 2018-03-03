@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour {
     public static int MAX_SHEEP = 15;
 	// Use this for initialization
 
-    int money;
+    int money = 50;
     public int Money{ get{return money;} set{money = value;}}
 
 

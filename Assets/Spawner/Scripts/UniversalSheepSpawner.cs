@@ -17,20 +17,29 @@ public class UniversalSheepSpawner : MonoBehaviour {
     [Tooltip("Position where the sheep can spawn")]
     [SerializeField] public Transform spawnPoint;         // An array of the spawn points this enemy can spawn from.
 
+    [Tooltip("Price to spawn this kind of sheep")]
+    [SerializeField] public int price = 5;
 
+    public bool inputForSpawnTriggered = false;
+
+    LevelManager levelManager;
 
     void Start()
     {
+        levelManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<LevelManager>();
         // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
         InvokeRepeating("SpawnAtStart", spawnTime, spawnTime);
     }
 
+    void Update(){
+        inputForSpawnTriggered = Input.GetButtonUp("Y");
+        Debug.Log(inputForSpawnTriggered);
+    }
 
     void SpawnAtStart()
     {
         if (!LevelManager.ONCE_ALL_SPAWNED)
         {
-            LevelManager.NB_SHEEPS++;
             if (LevelManager.NB_SHEEPS >= LevelManager.MAX_SHEEP)
             {
                 LevelManager.ONCE_ALL_SPAWNED = true;
@@ -40,11 +49,25 @@ public class UniversalSheepSpawner : MonoBehaviour {
     }
 
     public void Spawn(){
+        LevelManager.NB_SHEEPS++;
         sheep.GetComponent<ColorModule>().MyColor = colorEnum;
-        Debug.Log(sheep.GetComponent<ColorModule>().MyColor);
         GameObject o = Instantiate(sheep, spawnPoint.position, spawnPoint.rotation);
+    }
 
-
+    public void OnTriggerStays(Collider collider){
+        if (inputForSpawnTriggered && collider.gameObject.tag.Equals("Player"))
+        {
+            if (price <= levelManager.Money)
+            {
+                //play gliggling sound
+                levelManager.RemoveMoney(price);
+                Spawn();
+            }
+            else
+            {
+                //play error sound
+            }
+        }
     }
         
 }
