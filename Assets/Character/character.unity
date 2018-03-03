@@ -204,11 +204,6 @@ Prefab:
       propertyPath: colorManager
       value: 
       objectReference: {fileID: 1838194958}
-    - target: {fileID: 114559333662196442, guid: e6eb06db0a759d540a126c455fbc38ce,
-        type: 2}
-      propertyPath: myColor
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e6eb06db0a759d540a126c455fbc38ce, type: 2}
   m_IsPrefabParent: 0
@@ -338,7 +333,7 @@ Prefab:
     - target: {fileID: 114906207919527558, guid: dfdfe52862881da4c93ee9dfa9a587e0,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfdfe52862881da4c93ee9dfa9a587e0, type: 2}

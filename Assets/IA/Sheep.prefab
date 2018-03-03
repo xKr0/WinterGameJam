@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 54733157710884824}
   - component: {fileID: 114601473723203500}
   - component: {fileID: 114559333662196442}
+  - component: {fileID: 114473049564578936}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Sheep
@@ -469,6 +470,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114473049564578936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266403937976234}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d716147584bc07e448d31807972fd96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 95796560988355746}
+  sheepAgent: {fileID: 114601473723203500}
+  rgbd: {fileID: 54733157710884824}
 --- !u!114 &114559333662196442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -481,7 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleExplosion: {fileID: 198221631263921120}
-  myColor: 0
+  myColor: 6
   colorManager: {fileID: 0}
 --- !u!114 &114601473723203500
 MonoBehaviour:

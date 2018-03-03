@@ -88,8 +88,7 @@ public class PlayerGrab : MonoBehaviour {
     {
         carriedSheep.attachedRigidbody.isKinematic = false;
         carriedSheep.attachedRigidbody.AddForce(transform.forward * speedThrow);
-        //carriedSheep.GetComponent<Animator>().SetBool("Running", true);
-        //carriedSheep.GetComponent<SheepAgent>().enabled = true;
+        carriedSheep.GetComponent<ResetBehaviour>().enabled = true;
 
         isHolding = false;
         carriedSheep = null;
