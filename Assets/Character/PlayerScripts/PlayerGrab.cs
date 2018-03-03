@@ -65,14 +65,15 @@ public class PlayerGrab : MonoBehaviour {
     void Grab()
     {
         isHolding = true;
-
+        carriedSheep.GetComponent<Sheep>().IsGrabbed = true;
         carriedSheep.GetComponent<SheepAgent>().enabled = false;
         carriedSheep.GetComponent<Animator>().SetBool("Running", false);
         carriedSheep.attachedRigidbody.isKinematic = true;
     }
 
-    void LetGo()
+    public void LetGo()
     {
+        carriedSheep.GetComponent<Sheep>().IsGrabbed = false;
         carriedSheep.attachedRigidbody.isKinematic = false;
         carriedSheep.GetComponent<Animator>().SetBool("Running", true);
         carriedSheep.GetComponent<SheepAgent>().enabled = true;
