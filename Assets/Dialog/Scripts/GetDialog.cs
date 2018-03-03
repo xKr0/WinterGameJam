@@ -10,7 +10,12 @@ public class GetDialog : MonoBehaviour {
 	private Dictionary<string, List<string>> dicQuete;
 	private Dictionary<string, List<string>> dicDialog;
 
-	public string getTextQuete(string color) {
+    private void Start()
+    {
+        dicDialog = ReadCSV.GetDicFromCsv(csvDialog.text);
+        dicQuete = ReadCSV.GetDicFromCsv(csvQuete.text);
+    }
+    public string getTextQuete(string color) {
 		int rdm = Random.Range (0, dicQuete[color].Count);
 		return dicQuete [color][rdm];
 	}

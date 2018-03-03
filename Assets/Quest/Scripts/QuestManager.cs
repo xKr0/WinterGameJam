@@ -44,7 +44,7 @@ public class QuestManager : MonoBehaviour {
     // Change the text of the quest
     void ChangeText(TextBoxManager textBox)
     {
-        questText.text = textBox.textLines[textBox.currentLine-1];
+        questText.text = textBox.GetCurrentQuest();
     }
 
     void QuestFail()
