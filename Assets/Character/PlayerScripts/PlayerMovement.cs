@@ -42,8 +42,6 @@ public class PlayerMovement : MonoBehaviour
 		movement.y = 0.0f;
         Turn(movement);
         transform.Translate (movement * speed * Time.deltaTime, Space.World);
-		//Vector3 targetDirection = new Vector3(horizontal, 0f, vertical);
-
     }
 
     void Turn(Vector3 movement)
