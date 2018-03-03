@@ -7,59 +7,52 @@ public class PlayerGrab : MonoBehaviour {
     [SerializeField] float maxDetectDist;
     [SerializeField] float distFromPlayer;
     [SerializeField] float speedThrow;
+    [SerializeField] TriggerDetector triggerDetector;
 
     private Collider carriedSheep = null;
     private bool isHolding = false;
-	
-	void Update() 
-    { 
-        if (!isHolding)
+
+    private void Start()
+    {
+        triggerDetector.OnEnter += SetSheep;
+    }
+
+    void Update() 
+    {
+        if (!isHolding && PlayerSpec.pressGrab && carriedSheep != null)
         {
+            Grab();
+        }
+        else if(isHolding)
+        {
+            carriedSheep.transform.position = transform.position + transform.forward * distFromPlayer;
+            carriedSheep.transform.rotation = Quaternion.LookRotation(transform.forward);
+
             if (PlayerSpec.pressGrab)
             {
-                CheckTagInRange();
+                LetGo();
             }
-        }
-        else
-        {
-            if (carriedSheep != null)
+            else
             {
-                carriedSheep.transform.position = transform.position + transform.forward * distFromPlayer;
-                carriedSheep.transform.rotation = Quaternion.LookRotation(transform.forward);
-
-                if (PlayerSpec.pressGrab)
+                if (PlayerSpec.leftTrigger > 0.0f)
                 {
-                    LetGo();
+                    Throw();
                 }
-                else
+                else if (PlayerSpec.rightTrigger > 0.0f)
                 {
-                    if (PlayerSpec.leftTrigger > 0.0f)
-                    {
-                        Throw();
-                    }
-                    else if (PlayerSpec.rightTrigger > 0.0f)
-                    {
-                        Throw();
-                    }
-
+                    Throw();
                 }
+
             }
         }
 	}
 
-    void CheckTagInRange()
+    void SetSheep(Collider other)
     {
-        RaycastHit hit;
-        Vector3 fwd = transform.TransformDirection(Vector3.forward);
-
-        if (Physics.Raycast(transform.position, fwd, out hit, 100.0f))
+        if (!isHolding && other.tag == "Sheep")
         {
-            if (hit.collider.tag == "Sheep")
-            {
-                carriedSheep = hit.collider;
-                Grab();
-            }
-        }
+            carriedSheep = other;            
+        }        
     }
      
     void Grab()
