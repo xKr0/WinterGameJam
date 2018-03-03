@@ -29,7 +29,7 @@ public class MenuHandler : MonoBehaviour {
     }
 
     public void Quit(){
-        SceneManager.LoadScene(scene);
+        Application.Quit();
     }
 
     public void Controls(){
