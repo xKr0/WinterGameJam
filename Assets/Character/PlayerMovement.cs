@@ -89,6 +89,6 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 	void PnjInteraction(){
-		Debug.Log ("Interaction PNJ");
+		//Debug.Log ("Interaction PNJ");
 	}
 }

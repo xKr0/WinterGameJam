@@ -44,7 +44,7 @@ public class SheepSpawner : MonoBehaviour {
             Instantiate(Bluesheep, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
         }
         sheepSpawnAmount++;
-        Debug.Log(sheepSpawnAmount);
+        //Debug.Log(sheepSpawnAmount);
     }
 
     // Get the number of sheeps spawned
