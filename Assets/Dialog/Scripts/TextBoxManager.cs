@@ -37,10 +37,15 @@ public class TextBoxManager : MonoBehaviour {
 
     public void WriteQuest(Quest quest)
     {
-        text.text = quest.Text;
         textBox.SetActive(true);
+        text.text = quest.Text;
     }
 
+    public void WriteDialog(string dialog)
+    {
+        text.text = dialog;
+        textBox.SetActive(true);
+    }
     public void stopSpeaking()
     {
         textBox.SetActive(false);

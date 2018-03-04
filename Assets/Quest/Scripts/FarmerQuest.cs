@@ -9,7 +9,11 @@ public class FarmerQuest : MonoBehaviour {
     [SerializeField] private GetDialog csvManager;
     [SerializeField] private newQuestManager questManager;
     [SerializeField] private TextBoxManager textBoxManager;
+    [SerializeField] private QuestHUDManager questHUD;
     List<string> colors = new List<string>();
+    private bool neverSeen = true;
+
+    private string hello;
 
     public bool IsInteracting
     {
@@ -30,21 +34,31 @@ public class FarmerQuest : MonoBehaviour {
         colors = csvManager.getColor();
         GenerateQuest();
         //Debug.Log(quest);
+        hello = csvManager.getTextDialog("hello");
     }
 	
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-		if(isInteracting && questManager.CurrentClient == null)
+         if (neverSeen && isInteracting)
+         {
+            PlayerSpec.canMove = false;
+            //Debug.Log("Dialogue");
+            textBoxManager.WriteDialog(hello);
+            if (PlayerSpec.pressSubmit)
+            {
+                neverSeen = false;
+            }
+         }
+
+        else if (isInteracting && questManager.CurrentClient == null)
         {
             textBoxManager.WriteQuest(quest);
             //Apres avoir accepter la quete
             PlayerSpec.canMove = false;
             if (PlayerSpec.pressSubmit)
             {
-                Debug.Log("Quete accepte");
-                questManager.ActivateQuest(quest, this.GetComponent<Collider>());
-                PlayerSpec.canMove = true;
+                AcceptQuest();
             }
             else if (PlayerSpec.pressCancel)
             {
@@ -53,12 +67,11 @@ public class FarmerQuest : MonoBehaviour {
                 isInteracting = false;
             }
         }
-        
         else
         {
             //Apres avoir accepter ou refuse
             textBoxManager.stopSpeaking();
-        }
+        }               
 	}
 
     private string GetRandomColor()
@@ -71,5 +84,13 @@ public class FarmerQuest : MonoBehaviour {
     {
         string color = GetRandomColor();
         quest = new Quest(color, csvManager.getTextQuete(color));
+    }
+
+    private void AcceptQuest()
+    {
+        Debug.Log("Quete accepte");
+        questManager.ActivateQuest(quest, this.GetComponent<Collider>());
+        questHUD.ActivateHUD(quest);
+        PlayerSpec.canMove = true;
     }
 }
