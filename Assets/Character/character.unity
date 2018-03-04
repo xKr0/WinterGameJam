@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4362995222750486, guid: e6eb06db0a759d540a126c455fbc38ce, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1266403937976234, guid: e6eb06db0a759d540a126c455fbc38ce, type: 2}
       propertyPath: m_Name
@@ -204,6 +204,11 @@ Prefab:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114221084852330452, guid: 7cee5c022112f5b41a464e91b0f9d4bd,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1585808589}
+    - target: {fileID: 114340204557862332, guid: 7cee5c022112f5b41a464e91b0f9d4bd,
         type: 2}
       propertyPath: target
       value: 
@@ -394,6 +399,10 @@ Prefab:
         type: 2}
       propertyPath: m_Constraints
       value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953624506723948, guid: a3f11ad494cf4bf4381b920c2fd44f5b, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3f11ad494cf4bf4381b920c2fd44f5b, type: 2}
@@ -592,40 +601,40 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4957156326538958, guid: 120afa2d9eb100f42aac3a73b0c71d1e, type: 2}
+    - target: {fileID: 4440843379102560, guid: bdbdbc3a8daf5904babc5e6c378023c9, type: 2}
       propertyPath: m_LocalPosition.x
       value: -3.1125712
       objectReference: {fileID: 0}
-    - target: {fileID: 4957156326538958, guid: 120afa2d9eb100f42aac3a73b0c71d1e, type: 2}
+    - target: {fileID: 4440843379102560, guid: bdbdbc3a8daf5904babc5e6c378023c9, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0.35160208
       objectReference: {fileID: 0}
-    - target: {fileID: 4957156326538958, guid: 120afa2d9eb100f42aac3a73b0c71d1e, type: 2}
+    - target: {fileID: 4440843379102560, guid: bdbdbc3a8daf5904babc5e6c378023c9, type: 2}
       propertyPath: m_LocalPosition.z
       value: -0.63265896
       objectReference: {fileID: 0}
-    - target: {fileID: 4957156326538958, guid: 120afa2d9eb100f42aac3a73b0c71d1e, type: 2}
+    - target: {fileID: 4440843379102560, guid: bdbdbc3a8daf5904babc5e6c378023c9, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4957156326538958, guid: 120afa2d9eb100f42aac3a73b0c71d1e, type: 2}
+    - target: {fileID: 4440843379102560, guid: bdbdbc3a8daf5904babc5e6c378023c9, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4957156326538958, guid: 120afa2d9eb100f42aac3a73b0c71d1e, type: 2}
+    - target: {fileID: 4440843379102560, guid: bdbdbc3a8daf5904babc5e6c378023c9, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4957156326538958, guid: 120afa2d9eb100f42aac3a73b0c71d1e, type: 2}
+    - target: {fileID: 4440843379102560, guid: bdbdbc3a8daf5904babc5e6c378023c9, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4957156326538958, guid: 120afa2d9eb100f42aac3a73b0c71d1e, type: 2}
+    - target: {fileID: 4440843379102560, guid: bdbdbc3a8daf5904babc5e6c378023c9, type: 2}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 120afa2d9eb100f42aac3a73b0c71d1e, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: bdbdbc3a8daf5904babc5e6c378023c9, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &2037024856
 Prefab:
@@ -664,7 +673,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4362995222750486, guid: e6eb06db0a759d540a126c455fbc38ce, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114559333662196442, guid: e6eb06db0a759d540a126c455fbc38ce,
         type: 2}
