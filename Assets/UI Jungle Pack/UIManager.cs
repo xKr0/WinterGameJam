@@ -146,7 +146,7 @@ public class UIManager : MonoBehaviour
 		
 	void RemoveHealth(int index)
 	{
-		healthPanel.transform.GetChild (index-1).gameObject.SetActive(false);
+		healthPanel.transform.GetChild (index).gameObject.SetActive(false);
 	}
 
 
