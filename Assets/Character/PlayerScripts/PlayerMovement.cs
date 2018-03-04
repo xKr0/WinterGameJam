@@ -26,13 +26,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        Vector3 velocity = rgbd.velocity;
+        if (rgbd.velocity.y < 0.05)
+            rgbd.velocity = Vector3.up * jumpSpeed;
+        /*Vector3 velocity = rgbd.velocity;
 
-        if (Mathf.Abs(velocity.y) <= 0.001f)
+        if (Mathf.Abs(velocity.y) <= 0.05f)
         {
             velocity.y = jumpSpeed;
             rgbd.velocity = velocity;
-        }
+        }*/
     }
 
     void Move ()
