@@ -19,8 +19,8 @@ public class TimerBar : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-       this.gameObject.GetComponent<Slider>().value = this.gameObject.GetComponent<Slider>().value - (0.035f * Time.deltaTime);
-       if (this.gameObject.GetComponent<Slider>().value <= initialValue / 10)
+        this.gameObject.GetComponent<Slider>().value = this.gameObject.GetComponent<Slider>().value - (1.0f * Time.deltaTime);
+        if (this.gameObject.GetComponent<Slider>().value <= initialValue / 10)
         {
             fill.color = Color.red;
         }

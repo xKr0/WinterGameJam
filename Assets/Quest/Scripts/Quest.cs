@@ -68,7 +68,7 @@ public class Quest {
         ColorGoal = color;
         Text = text;
         reward = 10;
-        timer = 240.0f;
+        timer = 60.0f;
     }
 
     public override string ToString()
