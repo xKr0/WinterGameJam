@@ -14,10 +14,9 @@ public class LevelManager : MonoBehaviour {
     int money = 50;
     public int Money{ get{return money;} set{money = value;}}
 
-
+    //public AudioClip music;
 
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame

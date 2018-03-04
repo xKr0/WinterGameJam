@@ -8,30 +8,49 @@ public class UIManager : MonoBehaviour
 	private float m_TimeScaleRef = 1f;
     private float m_VolumeRef = 1f;
 
-    public Transform pauseMenu;
-    public Transform HUD;
-    public Transform gameOverMenu;
-    public Transform controls;
+    [SerializeField] Transform gameManager;
 
-    [SerializeField] GameObject reprendre;
-    [SerializeField] GameObject controles;
-    [SerializeField] GameObject quitter;
-    [SerializeField] GameObject back;
+    [SerializeField] Sprite buttonSelected;
+    [SerializeField] Sprite buttonNotSelected;
+    [SerializeField] AudioClip changeSound;
+    [SerializeField] AudioClip selectSound;
 
+    [SerializeField] Transform pauseMenu;
+    [SerializeField] Transform HUD;
+    [SerializeField] Transform gameOverMenu;
+    [SerializeField] Transform controls;
+
+    [SerializeField] Transform reprendre;
+    [SerializeField] Transform controles;
+    [SerializeField] Transform quitter;
+    [SerializeField] Transform back;
+
+    private AudioSource source;
 
     // Pause Menu
     public static bool isPaused = false;
     private bool showControls = false;
+    public static bool pressStart = false;
+
+    // HUD
+    private Transform HUDText;
 
     private bool isGameOver;
 
     void Awake()
     {
+
         pauseMenu.gameObject.SetActive(false);
         controls.gameObject.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(reprendre);
-        //HUD.gameObject.SetActive(true);
-        //gameOverMenu.gameObject.SetActive(false);
+        HUD.gameObject.SetActive(true);
+        gameOverMenu.gameObject.SetActive(false);
+
+        pauseMenu.gameObject.AddComponent<AudioSource>();
+        source = this.GetComponent<AudioSource>();
+        //Debug.Log(source != null);
+        //source.playOnAwake = false;
+
+        HUDText = HUD.GetChild(0).Find("Gold").Find("GoldLevel");
     }
 
 
@@ -44,8 +63,6 @@ public class UIManager : MonoBehaviour
         pauseMenu.gameObject.SetActive(true);
         // Select the button
         reprendre.GetComponent<Button>().Select(); // Or EventSystem.current.SetSelectedGameObject(myButton.gameObject)
-        // Highlight the button
-        reprendre.GetComponent<Button>().OnSelect(null); // Or myButton.OnSelect(new BaseEventData(EventSystem.current))
 
         isPaused = true;
     }
@@ -70,22 +87,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void UploadPauseMenu()
-    {
-        /*for (int i = 0; i < 3; i++) 
-        {
-            if (i == currentChoice)
-            {
-                Debug.Log(choices[i].name);
-                choices[i].GetComponent<Image>().sprite = currentItemBG;
-            } else
-            {
-                choices[i].GetComponent<Image>().sprite = otherItemsBG;
-            }
-        }
-        */
-    }
-
     public void ShowControls()
     {
         controls.gameObject.SetActive(true);
@@ -93,19 +94,16 @@ public class UIManager : MonoBehaviour
         showControls = true;
         // Select the button
         back.GetComponent<Button>().Select(); // Or EventSystem.current.SetSelectedGameObject(myButton.gameObject)
-        // Highlight the button
-        back.GetComponent<Button>().OnSelect(null); // Or myButton.OnSelect(new BaseEventData(EventSystem.current))
+        UnselectItem(controles);
     }
     public void HideControls()
     {
         controls.gameObject.SetActive(false);
         pauseMenu.gameObject.SetActive(true);
         showControls = false;
-        EventSystem.current.SetSelectedGameObject(reprendre);
         // Select the button
-        reprendre.GetComponent<Button>().Select(); // Or EventSystem.current.SetSelectedGameObject(myButton.gameObject)
-        // Highlight the button
-        reprendre.GetComponent<Button>().OnSelect(null); // Or myButton.OnSelect(new BaseEventData(EventSystem.current))
+        reprendre.GetComponent<Button>().Select();
+        UnselectItem(back);
     }
 
     public void Quit()
@@ -113,12 +111,33 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void SelectItem(Transform button)
+    {
+        button.GetComponent<Image>().sprite = buttonSelected;
+        source.clip = changeSound;
+        Debug.Log("ici" + source.clip != null);
+        source.PlayOneShot(changeSound, 1.0f);
+
+    }
+    public void UnselectItem(Transform button)
+    {
+        button.GetComponent<Image>().sprite = buttonNotSelected;
+    }
+
     void Update()
 	{
-	    if (Input.GetButtonUp("Start"))
+        float goldAmount;
+        string goldText;
+
+        if (pressStart)
         { 
             PauseMenuStatusChange();
         }
+
+        goldAmount = gameManager.GetComponent<LevelManager>().Money;
+        goldText = "x " + goldAmount;
+        HUDText.GetComponent<Text>().text = goldText;
+
 	}
 
 }
