@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4297707050089772}
   - component: {fileID: 114966679488484776}
   m_Layer: 0
-  m_Name: CSVManager
+  m_Name: CSVmanager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
