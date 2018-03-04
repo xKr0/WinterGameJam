@@ -25,7 +25,7 @@ public class PlayerGrab : MonoBehaviour {
         }
         else if(isHolding)
         {
-            carriedSheep.transform.position = transform.position + transform.forward * distFromPlayer;
+            carriedSheep.transform.position = transform.position + transform.forward * distFromPlayer + new Vector3(0f, 0.6f, 0f);
             carriedSheep.transform.rotation = Quaternion.LookRotation(transform.forward);
 
             if (PlayerSpec.pressGrab)
@@ -77,6 +77,7 @@ public class PlayerGrab : MonoBehaviour {
 
     void Throw()
     {
+        carriedSheep.GetComponent<Sheep>().IsGrabbed = false;
         carriedSheep.attachedRigidbody.isKinematic = false;
         carriedSheep.attachedRigidbody.AddForce(transform.forward * speedThrow);
         carriedSheep.GetComponent<ResetBehaviour>().enabled = true;

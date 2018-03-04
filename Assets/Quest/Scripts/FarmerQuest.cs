@@ -40,7 +40,6 @@ public class FarmerQuest : MonoBehaviour {
             textBoxManager.WriteQuest(quest);
             //Apres avoir accepter la quete
             PlayerSpec.canMove = false;
-            Debug.Log(PlayerSpec.pressCancel);
             if (PlayerSpec.pressSubmit)
             {
                 Debug.Log("Quete accepte");

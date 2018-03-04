@@ -26,13 +26,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        Vector3 velocity = rgbd.velocity;
+        if (rgbd.velocity.y < 0.05)
+            rgbd.velocity = Vector3.up * jumpSpeed;
+        /*Vector3 velocity = rgbd.velocity;
 
-        if (Mathf.Abs(velocity.y) <= 0.001f)
+        if (Mathf.Abs(velocity.y) <= 0.05f)
         {
             velocity.y = jumpSpeed;
             rgbd.velocity = velocity;
-        }
+        }*/
     }
 
     void Move ()
@@ -41,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 		movement = Camera.main.transform.TransformDirection(movement);
 		movement.y = 0.0f;
         Turn(movement);
-        transform.Translate (movement * speed * Time.deltaTime, Space.World);
+        transform.Translate (movement * speed * Time.fixedDeltaTime, Space.World);
     }
 
     void Turn(Vector3 movement)

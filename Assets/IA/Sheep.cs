@@ -11,5 +11,4 @@ public class Sheep : MonoBehaviour {
         get { return isGrabbed; }
         set { isGrabbed = value; }
     }
-
 }

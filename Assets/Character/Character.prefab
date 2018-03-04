@@ -1003,6 +1003,8 @@ GameObject:
   - component: {fileID: 114586720245890584}
   - component: {fileID: 114381162311823280}
   - component: {fileID: 114674331863441882}
+  - component: {fileID: 114433382419039536}
+  - component: {fileID: 114473217371391822}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -2356,7 +2358,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754004858482054}
-  m_LocalRotation: {x: -0.00591143, y: -0.6794483, z: 0.73369926, w: -0.0006656347}
+  m_LocalRotation: {x: -0.005911431, y: -0.6794483, z: 0.73369926, w: -0.0006656347}
   m_LocalPosition: {x: -0.14276123, y: 0.032653574, z: 0.13977996}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_Children: []
@@ -3044,7 +3046,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1669239742631692}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000035762784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.47, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
@@ -3113,9 +3115,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDetectDist: 2
-  distFromPlayer: 1
+  distFromPlayer: 1.5
   speedThrow: 800
   triggerDetector: {fileID: 114752865549863776}
+--- !u!114 &114433382419039536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669239742631692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98919aed692869446be0c2f77d96b5f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallMultiplier: 4
+  lowJumpMultiplier: 4
+--- !u!114 &114473217371391822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669239742631692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98919aed692869446be0c2f77d96b5f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallMultiplier: 6
+  lowJumpMultiplier: 4
 --- !u!114 &114586720245890584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3175,7 +3203,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.2
-  m_Height: 1.2
+  m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!137 &137008906613650002
