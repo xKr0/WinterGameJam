@@ -51,6 +51,7 @@ public class QuestManager : MonoBehaviour
     {
         // unregister event
         currentClient.GetComponent<Detector>().OnDetect -= TestColor;
+        currentClient.GetComponent<FarmerQuest>().TurnOnQuestReward();
 
         if (testColor == currentClient.GetComponent<FarmerQuest>().Quest.ColorGoal)
         {
@@ -67,7 +68,7 @@ public class QuestManager : MonoBehaviour
         Debug.Log("success");
         FarmerQuest clientQuest = currentClient.GetComponent<FarmerQuest>();
         clientQuest.Quest.IsDone = true;
-        clientQuest.Quest.IsSuccess = true;
+        clientQuest.Quest.IsSuccess = true;        
         ResetAll();
     }
 
