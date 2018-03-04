@@ -6,10 +6,10 @@ public class PlayerInteract : MonoBehaviour
 {
     Collider pnjCollider = null;
 
-    void FixedUpdate ()
+    void Update ()
     {
         if (pnjCollider != null && PlayerSpec.pressSpawn) {
-            PnjInteraction ();
+            PnjInteraction();
         }
     }
 

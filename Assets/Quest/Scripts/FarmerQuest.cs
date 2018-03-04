@@ -67,11 +67,8 @@ public class FarmerQuest : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update ()
-    {
-        if (IsInteracting)
-        {
-            fsmFarmer.ProcessInput();
-        }       
+    {      
+        fsmFarmer.ProcessInput();    
 	}
 
     public void ShowRandomText()
