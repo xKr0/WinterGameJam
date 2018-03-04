@@ -57,7 +57,6 @@ public class ReadCSV : MonoBehaviour
 			for(int x = 1; x < grid.GetUpperBound(0); x++) {
 				if(grid[x,y] != "" && grid[x, y] != null) phrase.Add (grid[x,y]);
 			}
-			Debug.Log (grid [0, y].ToString ());
 			dic.Add (grid[0, y].ToString(), phrase);
 		}
 		return dic;

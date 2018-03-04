@@ -4,25 +4,32 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour 
 {
-    bool isPnjInteraction = false;
+    Collider pnjCollider = null;
 
     void FixedUpdate ()
     {
-        if (isPnjInteraction && PlayerSpec.pressTalk) {
+        if (pnjCollider != null && PlayerSpec.pressSpawn) {
             PnjInteraction ();
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "PNJ") isPnjInteraction = true;
+        if (other.tag == "PNJ")
+        {
+            pnjCollider = other;
+        }       
     }
 
     void OnTriggerExit(Collider other) {
-        if(other.tag == "PNJ") isPnjInteraction = false;
+        if (other.tag == "PNJ")
+        {
+            pnjCollider = null;
+            other.gameObject.GetComponent<FarmerQuest>().IsInteracting = false;
+        }
     }
 
     void PnjInteraction(){
-        Debug.Log ("Interaction PNJ");
+        pnjCollider.GetComponent<FarmerQuest>().IsInteracting = true;
     }
 }
