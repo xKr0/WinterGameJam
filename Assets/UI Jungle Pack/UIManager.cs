@@ -25,10 +25,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] Transform quitter;
     [SerializeField] Transform back;
 
+    private AudioSource source;
 
     // Pause Menu
     public static bool isPaused = false;
     private bool showControls = false;
+    public static bool pressStart = false;
 
     // HUD
     private Transform HUDText;
@@ -37,10 +39,16 @@ public class UIManager : MonoBehaviour
 
     void Awake()
     {
+
         pauseMenu.gameObject.SetActive(false);
         controls.gameObject.SetActive(false);
         HUD.gameObject.SetActive(true);
         gameOverMenu.gameObject.SetActive(false);
+
+        pauseMenu.gameObject.AddComponent<AudioSource>();
+        source = pauseMenu.GetComponent<AudioSource>();
+        Debug.Log(source != null);
+        source.playOnAwake = false;
 
         HUDText = HUD.GetChild(0).Find("Gold").Find("GoldLevel");
     }
@@ -106,6 +114,8 @@ public class UIManager : MonoBehaviour
     public void SelectItem(Transform button)
     {
         button.GetComponent<Image>().sprite = buttonSelected;
+        source.clip = changeSound;
+        source.PlayOneShot(changeSound);
 
     }
     public void UnselectItem(Transform button)
@@ -118,7 +128,7 @@ public class UIManager : MonoBehaviour
         float goldAmount;
         string goldText;
 
-        if (Input.GetButtonUp("Start"))
+        if (pressStart)
         { 
             PauseMenuStatusChange();
         }
