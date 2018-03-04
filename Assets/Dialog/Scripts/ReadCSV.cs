@@ -11,14 +11,12 @@
 */
 
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq; 
 
 public class ReadCSV : MonoBehaviour 
 {
 	public TextAsset csvFile; 
-
 
 	// splits a CSV file into a 2D string array
 	static public Dictionary<string, List<string>> GetDicFromCsv(string csvText)
@@ -55,9 +53,9 @@ public class ReadCSV : MonoBehaviour
 		for (int y = 0; y < grid.GetUpperBound(1); y++) {
 			List<string> phrase = new List<string> ();
 			for(int x = 1; x < grid.GetUpperBound(0); x++) {
-				if(grid[x,y] != "" && grid[x, y] != null) phrase.Add (grid[x,y]);
+				if(grid[x,y] != "" && grid[x,y] != null) phrase.Add (grid[x,y]);
 			}
-			dic.Add (grid[0, y].ToString(), phrase);
+			dic.Add (grid[0,y].ToString(), phrase);
 		}
 		return dic;
 	}
