@@ -64,7 +64,7 @@ public class FarmerStateMachine
     }
 
     private void Idle()
-    {
+    {        
         if (farmerQuest.IsInteracting)
         {
             currentFarmerState = FarmerState.Hello;
@@ -77,6 +77,7 @@ public class FarmerStateMachine
         {
             CloseDialogWindow();
             farmerQuest.Fail();
+            farmerQuest.TurnOnQuestMarker();
         }
     }
 
@@ -86,6 +87,7 @@ public class FarmerStateMachine
         {
             CloseDialogWindow();
             farmerQuest.Success();
+            farmerQuest.TurnOnQuestMarker();
         }
     }
 

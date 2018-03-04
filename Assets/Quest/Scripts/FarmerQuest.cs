@@ -14,6 +14,9 @@ public class FarmerQuest : MonoBehaviour {
     [SerializeField] private LevelManager levelmanager;
     [SerializeField] private EventMaker eventMaker;
     [SerializeField] private GameObject highlight;
+    [SerializeField] private GameObject questAvailable;
+    [SerializeField] private GameObject questInProgress;
+    [SerializeField] private GameObject questReward;
 
     List<string> colors = null;
 
@@ -40,8 +43,8 @@ public class FarmerQuest : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        
         fsmFarmer = new FarmerStateMachine(this);
+        TurnOnQuestMarker();
     }
 	
 	// Update is called once per frame
@@ -72,7 +75,7 @@ public class FarmerQuest : MonoBehaviour {
     public void PickRandomQuest()
     {
         string color = GetRandomColor();
-        quest = new Quest(color, csvManager.getTextQuete(color));
+        quest = new Quest(color, csvManager.getTextQuete(color));        
     }
 
     public void ShowQuestText()
@@ -87,14 +90,13 @@ public class FarmerQuest : MonoBehaviour {
 
     public void Success()
     {
-        highlight.SetActive(false);
         levelmanager.AddMoney(quest.Reward);
         eventMaker.RandomPositiveEvent();
         EndCurrentQuest();
     }
+
     public void Fail()
     {
-        highlight.SetActive(false);
         LevelManager.NB_FAILS++;
         eventMaker.RandomNegativeEvent();
         EndCurrentQuest();
@@ -118,7 +120,7 @@ public class FarmerQuest : MonoBehaviour {
 
     public void AcceptQuest()
     {
-        highlight.SetActive(true);
+        TurnOnQuestInProgress();
         questManager.ActivateQuest(this.GetComponent<Collider>());
         questHUD.ActivateHUD(quest);
     }
@@ -128,4 +130,27 @@ public class FarmerQuest : MonoBehaviour {
         textBoxManager.stopSpeaking();
     }
 
+    public void TurnOnQuestMarker()
+    {
+        questReward.SetActive(false);
+        questAvailable.SetActive(true);
+        questInProgress.SetActive(false);
+        highlight.SetActive(false);
+    }
+
+    public void TurnOnQuestInProgress()
+    {
+        questReward.SetActive(false);
+        questAvailable.SetActive(false);
+        questInProgress.SetActive(true);
+        highlight.SetActive(true);
+    }
+
+    public void TurnOnQuestReward()
+    {
+        questReward.SetActive(true);
+        questAvailable.SetActive(false);
+        questInProgress.SetActive(false);
+        highlight.SetActive(false);
+    }
 }
