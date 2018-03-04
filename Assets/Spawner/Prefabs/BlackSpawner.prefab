@@ -138,7 +138,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6ce5c306e939ac34dafbf6e0fecb0387, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -226,7 +226,6 @@ MonoBehaviour:
   spawnPoint: {fileID: 4351998645297874}
   price: 3
   source: {fileID: 82000215039187810}
-  pop: {fileID: 8300000, guid: 6ce5c306e939ac34dafbf6e0fecb0387, type: 3}
   propulsion: 350
 --- !u!136 &136993869259340642
 CapsuleCollider:

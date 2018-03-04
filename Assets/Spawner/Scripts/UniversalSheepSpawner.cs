@@ -62,7 +62,7 @@ public class UniversalSheepSpawner : MonoBehaviour {
 
         o.GetComponent<ResetBehaviour>().enabled = true;
 
-        //source.PlayOneShot(pop);
+        source.Play();
     }
 
      void OnTriggerStay(Collider collider){
