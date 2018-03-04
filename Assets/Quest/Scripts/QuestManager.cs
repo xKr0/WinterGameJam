@@ -6,6 +6,8 @@ public class QuestManager : MonoBehaviour
 {
     private Collider currentClient = null;
 
+    private PlayerGrab playerGrab;
+
     private bool isOnMission = false;
 
     private float timer = 0.0f;
@@ -29,6 +31,11 @@ public class QuestManager : MonoBehaviour
         isOnMission = true;
     }
 
+    void Start() 
+    {
+        playerGrab = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGrab>();
+    }
+
     void Update()
     {
         if (isOnMission)
@@ -47,26 +54,48 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    void TestColor(ColorSheepEnum testColor)
+    void TestColor(Collider other)
     {
-        // unregister event
-        currentClient.GetComponent<Detector>().OnDetect -= TestColor;
-        currentClient.GetComponent<FarmerQuest>().TurnOnQuestReward();
+        if (currentClient != null)
+        {
+            // unregister event
+            currentClient.GetComponent<Detector>().OnDetect -= TestColor;
 
-        if (testColor == currentClient.GetComponent<FarmerQuest>().Quest.ColorGoal)
-        {
-            SucceedQuest();
-        }
-        else
-        {
-            FailQuest();
+            ColorSheepEnum color = other.GetComponent<ColorModule>().MyColor;
+
+            other.transform.GetComponent<SheepAgent>().enabled = false;
+
+            if (color == currentClient.GetComponent<FarmerQuest>().Quest.ColorGoal)
+            {
+                SucceedQuest();
+            }
+            else
+            {
+                FailQuest();
+            }
+
+            DespawnSheep(other);
         }
     }
+
+    void DespawnSheep(Collider col)
+    {
+        if (playerGrab.CarriedSheep == col)
+        {
+            playerGrab.LetGo();
+            col.transform.GetComponent<SheepAgent>().enabled = false;
+        }
+
+        col.GetComponent<Sheep>().TriggerFX();
+        Destroy(col.gameObject, 2.0f);
+    }
+
 
     void SucceedQuest()
     {
         Debug.Log("success");
         FarmerQuest clientQuest = currentClient.GetComponent<FarmerQuest>();
+        clientQuest.TurnOnQuestReward();
         clientQuest.Quest.IsDone = true;
         clientQuest.Quest.IsSuccess = true;        
         ResetAll();
@@ -74,8 +103,10 @@ public class QuestManager : MonoBehaviour
 
     void FailQuest()
     {
+        currentClient.GetComponent<FarmerQuest>().TurnOnQuestReward();
         Debug.Log("fail");
         FarmerQuest clientQuest = currentClient.GetComponent<FarmerQuest>();
+        clientQuest.TurnOnQuestReward();
         clientQuest.Quest.IsDone = true;
         ResetAll();
     }

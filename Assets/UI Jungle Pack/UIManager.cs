@@ -153,8 +153,10 @@ public class UIManager : MonoBehaviour
     public void BackToMenu(){
         PlayerSpec.canMove = true;
         Time.timeScale = m_TimeScaleRef;
-
-        SceneManager.LoadScene("Launch");
+        isPaused = false;
+        pressStart = false;
+        //gameOverMenu.gameObject.SetActive(false);
+        Application.LoadLevel("Launch");
     }
 
 }

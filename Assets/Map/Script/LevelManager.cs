@@ -11,8 +11,6 @@ public class LevelManager : MonoBehaviour {
 
     public static int NB_FAILS = 0;
 
-    public static bool ONCE_ALL_SPAWNED = false;
-
 	public static int MAX_HEALTH = 5;
 
     public int MAX_SHEEP = 25;
@@ -24,6 +22,11 @@ public class LevelManager : MonoBehaviour {
     [SerializeField] GameObject colorPrefab;
 
     private List<ColorSheepEnum> colorSuccess = new List<ColorSheepEnum>();
+
+    void Start(){
+        NB_FAILS = 4;
+        NB_SHEEPS = 0;
+    }
 
     int money = 30;
     public int Money{ get{return money;} set{money = value;}}

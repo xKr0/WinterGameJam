@@ -30,7 +30,7 @@ public class MenuHandler : MonoBehaviour {
 	}
 
     public void Play(){
-        SceneManager.LoadScene(scene);
+        Application.LoadLevel(scene);
     }
 
     public void Credits(){
