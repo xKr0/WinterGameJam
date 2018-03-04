@@ -19,6 +19,7 @@ public class Detector : MonoBehaviour
     void Start()
     {
         playerGrab = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGrab>();
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -30,6 +31,7 @@ public class Detector : MonoBehaviour
                 ColorSheepEnum color = other.GetComponent<ColorModule>().MyColor;
                 _onDetect(color);
 
+                other.transform.GetComponent<SheepAgent>().enabled = false;
                 DespawnSheep(other);
             }
         }
@@ -40,9 +42,11 @@ public class Detector : MonoBehaviour
         if (playerGrab.CarriedSheep == col)
         {
             playerGrab.LetGo();
+            col.transform.GetComponent<SheepAgent>().enabled = false;
         }
 
-        Destroy(col.gameObject, 0.0f);
+        col.GetComponent<Sheep>().TriggerFX();
+        Destroy(col.gameObject, 2.0f);
     }
 	
 }
