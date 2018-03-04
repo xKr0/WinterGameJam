@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4224593312633520}
   - component: {fileID: 65518183106659446}
   - component: {fileID: 114350159520688648}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4388850007135854}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4602863579194082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TrashPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 33154872458705892}
   - component: {fileID: 136291005205437376}
   - component: {fileID: 23303500252647062}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4705330408506256}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TrashEntry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 33699429399998662}
   - component: {fileID: 23444021969968242}
   - component: {fileID: 64178009434025006}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1888310146706864}
-  m_LocalRotation: {x: 0.6533241, y: 0.6533243, z: 0.27049512, w: 0.270495}
+  m_LocalRotation: {x: 0.65332407, y: 0.65332425, z: 0.2704951, w: 0.27049497}
   m_LocalPosition: {x: -10.13, y: 1.61, z: 11.38}
   m_LocalScale: {x: 0.5, y: 0.5000005, z: 0.2}
   m_Children:

@@ -7,21 +7,26 @@ public class ColorManager : MonoBehaviour
     public enum ColorList
     {
         Red,
-        Blue,
-        Green,
-        Black,
-        White,
-        Gray,
+        Orange,
         Yellow,
+        Apple,
+        Green,
+        Turqoise,
         Cyan,
+        Sky,
+        Blue,
+        Purple,
         Magenta,
-        Trash,
-        Pink
+        Pink,
+        White,
+        Black,
+        Grey,
+        Trash
     }
 
     [Tooltip("Attention les textures doivent être dans l'ordre exacte de ColorList")]
     [SerializeField]
-    Texture[] colorTexture = new Texture[10];
+    Texture[] colorTexture = new Texture[16];
 
     Combinaison combinaison;
 

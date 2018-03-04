@@ -229,6 +229,26 @@ Prefab:
       propertyPath: propulsion
       value: 350
       objectReference: {fileID: 0}
+    - target: {fileID: 114096375316343898, guid: fa8ed02d70a733b44931fedfe1ea1c94,
+        type: 2}
+      propertyPath: colorEnum
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114775859949089532, guid: fa8ed02d70a733b44931fedfe1ea1c94,
+        type: 2}
+      propertyPath: colorEnum
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021933067087162, guid: fa8ed02d70a733b44931fedfe1ea1c94,
+        type: 2}
+      propertyPath: colorEnum
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114318746362838564, guid: fa8ed02d70a733b44931fedfe1ea1c94,
+        type: 2}
+      propertyPath: colorEnum
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa8ed02d70a733b44931fedfe1ea1c94, type: 2}
   m_IsPrefabParent: 0
