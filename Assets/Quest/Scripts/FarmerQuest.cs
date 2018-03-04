@@ -13,12 +13,8 @@ public class FarmerQuest : MonoBehaviour {
     [SerializeField] private QuestHUDManager questHUD;
 
     List<string> colors = new List<string>();
-    private string hello;
+
     private FarmerStateMachine fsmFarmer;
-
-    string accept = "Quest accepted!";
-
-    string random = "Random";
 
     public bool IsInteracting
     {
@@ -61,8 +57,6 @@ public class FarmerQuest : MonoBehaviour {
     {
         colors = csvManager.getColor();
         fsmFarmer = new FarmerStateMachine(this);
-        //Debug.Log(quest);
-        hello = csvManager.getTextDialog("hello");
     }
 	
 	// Update is called once per frame
@@ -73,12 +67,12 @@ public class FarmerQuest : MonoBehaviour {
 
     public void ShowRandomText()
     {
-        textBoxManager.Write(random);
+        textBoxManager.Write(csvManager.getTextDialog("Random"));
     }
 
     public void ShowAcceptText()
     {
-        textBoxManager.Write(accept);
+        textBoxManager.Write(csvManager.getTextDialog("Accept"));
     }
 
     private string GetRandomColor()
@@ -99,7 +93,7 @@ public class FarmerQuest : MonoBehaviour {
 
     public void ShowSuccessText()
     {
-        throw new NotImplementedException();
+        textBoxManager.Write(csvManager.getTextDialog("Success"));
     }
 
     public void Success()
@@ -113,12 +107,12 @@ public class FarmerQuest : MonoBehaviour {
 
     public void ShowHelloText()
     {
-        textBoxManager.Write(hello);
+        textBoxManager.Write(csvManager.getTextDialog("Hello"));
     }
 
     public void ShowFailText()
     {
-        throw new NotImplementedException();
+        textBoxManager.Write(csvManager.getTextDialog("Fail"));
     }
 
     public void AcceptQuest()
