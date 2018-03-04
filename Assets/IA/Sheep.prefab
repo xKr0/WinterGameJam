@@ -566,7 +566,7 @@ MonoBehaviour:
   renderer: {fileID: 137719234907034012}
   particleExplosion: {fileID: 198221631263921120}
   trail: {fileID: 198444009323450652}
-  myColor: 8
+  myColor: 13
 --- !u!114 &114601473723203500
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1207,7 +1207,8 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   buttonSelected: {fileID: 21300002, guid: 6128ff6b1c7dfca469c0ca3099526136, type: 3}
   buttonNotSelected: {fileID: 21300006, guid: 6128ff6b1c7dfca469c0ca3099526136, type: 3}
-  sound: {fileID: 8300000, guid: d545ae83e285d424e92bd17d9dba2f09, type: 3}
+  changeSound: {fileID: 0}
+  selectSound: {fileID: 0}
   pauseMenu: {fileID: 224338651415678298}
   HUD: {fileID: 224113040616761610}
   gameOverMenu: {fileID: 224049812753188292}
