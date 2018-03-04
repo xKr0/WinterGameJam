@@ -31,6 +31,7 @@ public class Detector : MonoBehaviour
                 ColorSheepEnum color = other.GetComponent<ColorModule>().MyColor;
                 _onDetect(color);
 
+                other.transform.GetComponent<SheepAgent>().enabled = false;
                 DespawnSheep(other);
             }
         }
@@ -41,6 +42,7 @@ public class Detector : MonoBehaviour
         if (playerGrab.CarriedSheep == col)
         {
             playerGrab.LetGo();
+            col.transform.GetComponent<SheepAgent>().enabled = false;
         }
 
         col.GetComponent<Sheep>().TriggerFX();
