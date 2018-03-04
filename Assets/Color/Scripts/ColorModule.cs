@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ColorModule : MonoBehaviour {
+    [SerializeField]
+    Renderer renderer;
 
     Material material;
 
@@ -23,7 +25,7 @@ public class ColorModule : MonoBehaviour {
 	void Start () {
         colorManager = FindObjectOfType<ColorManager>();
 
-        material = GetComponentInChildren<Renderer>().material;
+        material = renderer.material;
 
         SetSheepColor(myColor);
     }
@@ -32,6 +34,7 @@ public class ColorModule : MonoBehaviour {
     {
         this.myColor = color;
         material.SetTexture("_MainTex", colorManager.GetColorByEnum(color));
+
     }
 
     private void OnCollisionEnter(Collision collision)

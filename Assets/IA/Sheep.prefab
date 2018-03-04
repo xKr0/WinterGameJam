@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 114473049564578936}
   - component: {fileID: 114846002104759650}
   - component: {fileID: 114758337440122302}
+  - component: {fileID: 23378371040917022}
   m_Layer: 10
   m_Name: Sheep
   m_TagString: Sheep
@@ -428,6 +429,40 @@ Transform:
   m_Father: {fileID: 4428460599182090}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23378371040917022
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266403937976234}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!54 &54733157710884824
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -497,8 +532,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cbff65e3fe0f104f882642a882e4f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderer: {fileID: 137719234907034012}
   particleExplosion: {fileID: 198221631263921120}
-  myColor: 8
+  myColor: 12
 --- !u!114 &114601473723203500
 MonoBehaviour:
   m_ObjectHideFlags: 1
