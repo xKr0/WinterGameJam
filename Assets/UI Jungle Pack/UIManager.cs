@@ -121,6 +121,8 @@ public class UIManager : MonoBehaviour
     public void UnselectItem(Transform button)
     {
         button.GetComponent<Image>().sprite = buttonNotSelected;
+        source.clip = changeSound;
+        source.PlayOneShot(changeSound);
     }
 
     void Update()
