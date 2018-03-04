@@ -12,8 +12,6 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] Sprite buttonSelected;
     [SerializeField] Sprite buttonNotSelected;
-    [SerializeField] AudioClip changeSound;
-    [SerializeField] AudioClip selectSound;
 
     [SerializeField] Transform pauseMenu;
     [SerializeField] Transform HUD;
@@ -25,7 +23,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Transform quitter;
     [SerializeField] Transform back;
 
-    private AudioSource source;
+    [SerializeField] AudioSource source;
 
     // Pause Menu
     public static bool isPaused = false;
@@ -45,8 +43,7 @@ public class UIManager : MonoBehaviour
         HUD.gameObject.SetActive(true);
         gameOverMenu.gameObject.SetActive(false);
 
-        pauseMenu.gameObject.AddComponent<AudioSource>();
-        source = this.GetComponent<AudioSource>();
+
         //Debug.Log(source != null);
         //source.playOnAwake = false;
 
@@ -114,9 +111,9 @@ public class UIManager : MonoBehaviour
     public void SelectItem(Transform button)
     {
         button.GetComponent<Image>().sprite = buttonSelected;
-        source.clip = changeSound;
-        Debug.Log("ici" + source.clip != null);
-        source.PlayOneShot(changeSound, 1.0f);
+        //source.clip = changeSound;
+        //Debug.Log("ici " + source.clip != null);
+        source.Play();
 
     }
     public void UnselectItem(Transform button)
