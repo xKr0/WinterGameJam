@@ -7,11 +7,18 @@ public class Detector : MonoBehaviour
 {
     [SerializeField] string tagToDetect = "Sheep";
 
+    private PlayerGrab playerGrab;
+
     event Action<ColorSheepEnum> _onDetect;
     public event Action<ColorSheepEnum> OnDetect
     {
         add { _onDetect += value; }
         remove { _onDetect -= value; }
+    }
+
+    void Start()
+    {
+        playerGrab = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGrab>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -20,9 +27,22 @@ public class Detector : MonoBehaviour
         {
             if (_onDetect != null)
             {
-                _onDetect(other.GetComponent<ColorModule>().MyColor);
+                ColorSheepEnum color = other.GetComponent<ColorModule>().MyColor;
+                _onDetect(color);
+
+                DespawnSheep(other);
             }
         }
+    }
+
+    void DespawnSheep(Collider col)
+    {
+        if (playerGrab.CarriedSheep == col)
+        {
+            playerGrab.LetGo();
+        }
+
+        Destroy(col.gameObject, 0.0f);
     }
 	
 }
