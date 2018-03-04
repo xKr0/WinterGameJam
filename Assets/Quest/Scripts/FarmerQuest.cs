@@ -17,6 +17,10 @@ public class FarmerQuest : MonoBehaviour {
     private string hello;
     private FarmerStateMachine fsmFarmer;
 
+    string accept = "Quest accepted!";
+
+    string random = "Random";
+
     public bool IsInteracting
     {
         get { return isInteracting; }
@@ -63,7 +67,7 @@ public class FarmerQuest : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void FixedUpdate ()
+	void Update ()
     {
         if (IsInteracting)
         {
@@ -73,12 +77,12 @@ public class FarmerQuest : MonoBehaviour {
 
     public void ShowRandomText()
     {
-        throw new NotImplementedException();
+        textBoxManager.Write(random);
     }
 
     public void ShowAcceptText()
     {
-        throw new NotImplementedException();
+        textBoxManager.Write(accept);
     }
 
     private string GetRandomColor()
