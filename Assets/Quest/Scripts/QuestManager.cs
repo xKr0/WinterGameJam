@@ -14,8 +14,6 @@ public class QuestManager : MonoBehaviour {
     private bool failQuest = false;
 	// Use this for initialization
 	void Start () {
-        textBoxManagerFarmer1 = textBoxManagerFarmer1.GetComponent<TextBoxManager>();
-        textBoxManagerFarmer2 = textBoxManagerFarmer2.GetComponent<TextBoxManager>();
     }
 	
 	// Update is called once per frame

@@ -22,7 +22,6 @@ public class CameraFollow : MonoBehaviour {
         y = Input.GetAxis("RightStickVertical") * RotateSpeed;
         x = Input.GetAxis("RightStickHorizontal") * RotateSpeed;
         
-
         offset = Quaternion.AngleAxis(x, Vector3.up) * offset;
         //offset = Quaternion.AngleAxis(y, Vector3.right) * offset;
         
