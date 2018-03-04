@@ -8,8 +8,6 @@ public class QuestManager : MonoBehaviour
     private Collider currentClient = null;
 
     private bool isOnMission = false;
-    private bool isDone = false;
-    private bool isSuccess = false;
 
     private float timer = 0.0f;
 
@@ -25,22 +23,9 @@ public class QuestManager : MonoBehaviour
         set { isOnMission = value; }
     }
 
-    public bool IsDone
-    {
-        get { return isDone; }
-        set { isDone = value; }
-    }
-
-    public bool IsSuccess
-    {
-        get { return isSuccess; }
-        set { isSuccess = value; }
-    }
-
     public void ActivateQuest(Quest quest, Collider client)
     {
         currentQuest = quest;
-        currentQuest.Timer = 1200.0f;
         currentClient = client;
         currentClient.GetComponent<Detector>().OnDetect += TestColor;
         isOnMission = true;
@@ -81,13 +66,18 @@ public class QuestManager : MonoBehaviour
 
     void SucceedQuest()
     {
-        Debug.Log("Success!");
+        Debug.Log("success");
+        FarmerQuest clientQuest = currentClient.GetComponent<FarmerQuest>();
+        clientQuest.Quest.IsDone = true;
+        clientQuest.Quest.IsSuccess = true;
         ResetAll();
     }
 
     void FailQuest()
     {
-        Debug.Log("Fail");
+        Debug.Log("fail");
+        FarmerQuest clientQuest = currentClient.GetComponent<FarmerQuest>();
+        clientQuest.Quest.IsDone = true;
         ResetAll();
     }
 

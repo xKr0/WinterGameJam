@@ -17,4 +17,9 @@ public class QuestHUDManager : MonoBehaviour
         slider.maxValue = quest.Timer;
         slider.value = quest.Timer;
     }
+
+    public void DesactiveHUD()
+    {
+        questHUD.SetActive(false);
+    }
 }

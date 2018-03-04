@@ -3068,6 +3068,7 @@ MonoBehaviour:
   csvManager: {fileID: 0}
   questManager: {fileID: 0}
   textBoxManager: {fileID: 0}
+  questHUD: {fileID: 0}
 --- !u!114 &114952760790857836
 MonoBehaviour:
   m_ObjectHideFlags: 1

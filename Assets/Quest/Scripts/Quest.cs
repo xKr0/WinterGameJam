@@ -82,7 +82,7 @@ public class Quest {
     {
         colorGoal = ColorManager.GetEnumByName(color);
         Text = text;
-        reward = 10;
+        reward = 15;
         timer = 60.0f;
     }
 

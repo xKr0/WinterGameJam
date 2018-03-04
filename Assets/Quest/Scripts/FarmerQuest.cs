@@ -23,37 +23,19 @@ public class FarmerQuest : MonoBehaviour {
     public bool IsInteracting
     {
         get { return isInteracting; }
-
-        set
-        {
-            isInteracting = value;
-        }
+        set { isInteracting = value; }
     }
 
     public Quest Quest
     {
-        get
-        {
-            return quest;
-        }
-
-        set
-        {
-            quest = value;
-        }
+        get { return quest; }
+        set { quest = value; }
     }
 
     public QuestManager QuestManager
     {
-        get
-        {
-            return questManager;
-        }
-
-        set
-        {
-            questManager = value;
-        }
+        get { return questManager; }
+        set { questManager = value; }
     }
 
     // Use this for initialization
@@ -104,11 +86,18 @@ public class FarmerQuest : MonoBehaviour {
 
     public void Success()
     {
-        throw new NotImplementedException();
+        
+        EndCurrentQuest();
     }
     public void Fail()
     {
-        throw new NotImplementedException();
+        EndCurrentQuest();
+    }
+
+    public void EndCurrentQuest()
+    {
+        questHUD.DesactiveHUD();
+        quest = null;
     }
 
     public void ShowHelloText()

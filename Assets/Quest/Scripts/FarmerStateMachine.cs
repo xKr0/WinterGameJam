@@ -146,10 +146,10 @@ public class FarmerStateMachine
                 // show the dialog for the quest
                 farmerQuest.ShowQuestText();
 
-                // Go To Propose
+                // Go To Offer
                 currentFarmerState = FarmerState.Offer;
             }
-            else if (farmerQuest.QuestManager.IsDone && farmerQuest.QuestManager.IsSuccess)
+            else if (farmerQuest.Quest.IsDone && farmerQuest.Quest.IsSuccess)
             {
                 // show the dialog for the quest
                 farmerQuest.ShowSuccessText();
@@ -157,7 +157,7 @@ public class FarmerStateMachine
                 // Go To Success
                 currentFarmerState = FarmerState.Success;
             }
-            else if (farmerQuest.QuestManager.IsDone && !farmerQuest.QuestManager.IsSuccess)
+            else if (farmerQuest.Quest.IsDone && !farmerQuest.Quest.IsSuccess)
             {
                 // show the dialog for the quest
                 farmerQuest.ShowFailText();
