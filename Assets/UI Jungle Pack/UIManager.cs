@@ -137,7 +137,7 @@ public class UIManager : MonoBehaviour
         goldAmount = gameManager.GetComponent<LevelManager>().Money;
         goldText = "x " + goldAmount;
         HUDText.GetComponent<Text>().text = goldText;
-		if (LevelManager.MAX_HEALTH - LevelManager.NB_FAILS < healthPanel.GetComponentsInChildren<Image>().Length)
+		if (LevelManager.MAX_HEALTH - LevelManager.NB_FAILS < (healthPanel.GetComponentsInChildren<Image>().Length-1))
 		{
 			RemoveHealth (LevelManager.MAX_HEALTH - LevelManager.NB_FAILS);
 		}
