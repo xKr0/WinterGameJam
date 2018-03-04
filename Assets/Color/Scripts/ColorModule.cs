@@ -12,6 +12,9 @@ public class ColorModule : MonoBehaviour {
     ParticleSystem particleExplosion;
 
     [SerializeField]
+    ParticleSystem trail;
+
+    [SerializeField]
     ColorManager.ColorList myColor;
 
     ColorManager colorManager;
@@ -28,13 +31,16 @@ public class ColorModule : MonoBehaviour {
         material = renderer.material;
 
         SetSheepColor(myColor);
+
+        //trail.main.startColor.color = colorManager.GetColorFromEnum(myColor);
     }
 
     public void SetSheepColor(ColorManager.ColorList color)
     {
         this.myColor = color;
         material.SetTexture("_MainTex", colorManager.GetColorByEnum(color));
-
+        ParticleSystem.MainModule settings = trail.main;
+        settings.startColor = new ParticleSystem.MinMaxGradient(colorManager.ConvertColor(colorManager.GetColorFromEnum(myColor)));
     }
 
     private void OnCollisionEnter(Collision collision)
