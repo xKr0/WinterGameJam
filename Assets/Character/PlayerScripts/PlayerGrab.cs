@@ -25,7 +25,7 @@ public class PlayerGrab : MonoBehaviour {
         }
         else if(isHolding)
         {
-            carriedSheep.transform.position = transform.position + transform.forward * distFromPlayer;
+            carriedSheep.transform.position = transform.position + transform.forward * distFromPlayer + new Vector3(0f, 0.6f, 0f);
             carriedSheep.transform.rotation = Quaternion.LookRotation(transform.forward);
 
             if (PlayerSpec.pressGrab)

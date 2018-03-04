@@ -14,10 +14,10 @@ public class BetterJump : MonoBehaviour {
     }
 
     void FixedUpdate(){
-        if (rb.velocity.y < 0.1)
+        if (rb.velocity.y < 0f)
         {
             rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
-        }else if( rb.velocity.y > 0 && !Input.GetButton("A")){
+        }else if( rb.velocity.y > 0f && !Input.GetButton("A")){
             rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
         }
     }
