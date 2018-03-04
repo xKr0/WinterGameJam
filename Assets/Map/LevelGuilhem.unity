@@ -7306,6 +7306,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &603745652 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1850670505970644, guid: 8d8f049106c8bbf4580d937767e5e314,
+    type: 2}
+  m_PrefabInternal: {fileID: 1808959362}
 --- !u!1001 &717181087
 Prefab:
   m_ObjectHideFlags: 0
@@ -10764,6 +10769,7 @@ MonoBehaviour:
   MAX_SHEEP: 30
   source: {fileID: 1043747267}
   winPanel: {fileID: 765537929}
+  buttonBack: {fileID: 603745652}
   rainbowPanel: {fileID: 765537928}
   colorPrefab: {fileID: 1717654393367928, guid: 8358a280414141c4497c94831d277876,
     type: 2}
