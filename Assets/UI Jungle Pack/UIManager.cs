@@ -46,9 +46,9 @@ public class UIManager : MonoBehaviour
         gameOverMenu.gameObject.SetActive(false);
 
         pauseMenu.gameObject.AddComponent<AudioSource>();
-        source = pauseMenu.GetComponent<AudioSource>();
-        Debug.Log(source != null);
-        source.playOnAwake = false;
+        source = this.GetComponent<AudioSource>();
+        //Debug.Log(source != null);
+        //source.playOnAwake = false;
 
         HUDText = HUD.GetChild(0).Find("Gold").Find("GoldLevel");
     }
@@ -115,14 +115,13 @@ public class UIManager : MonoBehaviour
     {
         button.GetComponent<Image>().sprite = buttonSelected;
         source.clip = changeSound;
-        source.PlayOneShot(changeSound);
+        Debug.Log("ici" + source.clip != null);
+        source.PlayOneShot(changeSound, 1.0f);
 
     }
     public void UnselectItem(Transform button)
     {
         button.GetComponent<Image>().sprite = buttonNotSelected;
-        source.clip = changeSound;
-        source.PlayOneShot(changeSound);
     }
 
     void Update()

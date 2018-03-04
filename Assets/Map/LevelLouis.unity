@@ -350,6 +350,16 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 49478159}
+    - target: {fileID: 82102734492298684, guid: 8d8f049106c8bbf4580d937767e5e314,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82102734492298684, guid: 8d8f049106c8bbf4580d937767e5e314,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d545ae83e285d424e92bd17d9dba2f09, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d8f049106c8bbf4580d937767e5e314, type: 2}
   m_IsPrefabParent: 0
