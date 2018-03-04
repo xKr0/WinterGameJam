@@ -24,8 +24,9 @@ public class LevelManager : MonoBehaviour {
     private List<ColorSheepEnum> colorSuccess = new List<ColorSheepEnum>();
 
     void Start(){
-        NB_FAILS = 4;
+        NB_FAILS = 0;
         NB_SHEEPS = 0;
+        Time.timeScale = 1f;
     }
 
     int money = 30;

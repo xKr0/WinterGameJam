@@ -156,7 +156,7 @@ public class UIManager : MonoBehaviour
         isPaused = false;
         pressStart = false;
         //gameOverMenu.gameObject.SetActive(false);
-        Application.LoadLevel("Launch");
+        SceneManager.LoadScene("Launch");
     }
 
 }

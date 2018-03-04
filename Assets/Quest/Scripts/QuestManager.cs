@@ -93,7 +93,6 @@ public class QuestManager : MonoBehaviour
 
     void SucceedQuest()
     {
-        Debug.Log("success");
         FarmerQuest clientQuest = currentClient.GetComponent<FarmerQuest>();
         clientQuest.TurnOnQuestReward();
         clientQuest.Quest.IsDone = true;
@@ -104,7 +103,6 @@ public class QuestManager : MonoBehaviour
     void FailQuest()
     {
         currentClient.GetComponent<FarmerQuest>().TurnOnQuestReward();
-        Debug.Log("fail");
         FarmerQuest clientQuest = currentClient.GetComponent<FarmerQuest>();
         clientQuest.TurnOnQuestReward();
         clientQuest.Quest.IsDone = true;
