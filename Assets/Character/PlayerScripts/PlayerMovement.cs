@@ -8,6 +8,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody rgbd;
     Vector3 lastMove;
 
+    bool canJump=true;
+
+    bool isGrounded = true;
+
     void Start()
     {
         lastMove = Vector3.zero;
@@ -18,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         Move();
         Animating();
 
-        if (PlayerSpec.pressJump)
+        if (PlayerSpec.pressJump && isGrounded)
         {
             Jump();
         }
@@ -26,8 +30,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        if (rgbd.velocity.y < 0.05)
-            rgbd.velocity = Vector3.up * jumpSpeed;
+        isGrounded = false;
+        rgbd.velocity = Vector3.up * jumpSpeed;
+
+
+           
         /*Vector3 velocity = rgbd.velocity;
 
         if (Mathf.Abs(velocity.y) <= 0.05f)
@@ -72,6 +79,15 @@ public class PlayerMovement : MonoBehaviour
 
         // Tell the animator whether or not the player is walking.
         anim.SetBool ("isRunning", running);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.layer==8 || collision.gameObject.layer==9)
+        {
+            isGrounded = true;
+        }
     }
 
 }

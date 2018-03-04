@@ -15,10 +15,14 @@ public class UniversalSheepSpawner : MonoBehaviour {
     [SerializeField] private float spawnTime = 3f;    
     // How long between each spawn.
     [Tooltip("Position where the sheep can spawn")]
-    [SerializeField] public Transform spawnPoint;         // An array of the spawn points this enemy can spawn from.
+    [SerializeField] private Transform spawnPoint;         // An array of the spawn points this enemy can spawn from.
 
     [Tooltip("Price to spawn this kind of sheep")]
-    [SerializeField] public int price = 5;
+    [SerializeField] private int price = 5;
+
+    [Tooltip("Sound to play when popping")]
+    [SerializeField]  AudioSource source;
+
 
     bool canBuy = false;
     LevelManager levelManager;
@@ -46,6 +50,7 @@ public class UniversalSheepSpawner : MonoBehaviour {
     }
 
     public void Spawn(){
+
         LevelManager.NB_SHEEPS++;
         sheep.GetComponent<ColorModule>().MyColor = colorEnum;
 
@@ -56,6 +61,8 @@ public class UniversalSheepSpawner : MonoBehaviour {
         o.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * propulsion);
 
         o.GetComponent<ResetBehaviour>().enabled = true;
+
+        //source.PlayOneShot(pop);
     }
 
      void OnTriggerStay(Collider collider){
