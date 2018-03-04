@@ -7,7 +7,7 @@ public class FarmerQuest : MonoBehaviour {
     private Quest quest;
     private bool isInteracting = false;
     [SerializeField] private GetDialog csvManager;
-    [SerializeField] private QuestManager questManager;
+    [SerializeField] private newQuestManager questManager;
     [SerializeField] private TextBoxManager textBoxManager;
     List<string> colors = new List<string>();
 
@@ -43,8 +43,7 @@ public class FarmerQuest : MonoBehaviour {
             if (PlayerSpec.pressSubmit)
             {
                 Debug.Log("Quete accepte");
-                questManager.CurrentQuest = quest;
-                questManager.CurrentClient = this.GetComponent<Collider>().gameObject;
+                questManager.ActivateQuest(quest, this.GetComponent<Collider>());
                 PlayerSpec.canMove = true;
             }
             else if (PlayerSpec.pressCancel)
