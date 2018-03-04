@@ -13,9 +13,15 @@ namespace Es.InkPainter.Sample
 
 		private int waitCount;
 
+        ColorManager.ColorList myColor;
+
 		public void Awake()
 		{
-			GetComponent<MeshRenderer>().material.color = brush.Color;
+            myColor = GetComponent<ColorModule>().MyColor;
+            //get la couleur rgb 
+
+
+			//GetComponent<MeshRenderer>().material.color = brush.Color;
 		}
 
 		public void FixedUpdate()
