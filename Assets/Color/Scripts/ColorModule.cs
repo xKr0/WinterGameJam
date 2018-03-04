@@ -46,6 +46,7 @@ public class ColorModule : MonoBehaviour {
         // if it's another sheep
         if (collision.gameObject.tag.Equals(this.gameObject.tag) && collision.gameObject.GetComponent<ColorModule>().MyColor != myColor)
         {
+            GetComponent<SheepAgent>().PlaySound();
             particleExplosion.Play();
             ColorList color = colorManager.Combine(myColor, collision.gameObject.GetComponent<ColorModule>().MyColor);
             SetSheepColor(color);
