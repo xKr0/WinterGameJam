@@ -13,6 +13,7 @@ public class FarmerQuest : MonoBehaviour {
     [SerializeField] private QuestHUDManager questHUD;
     [SerializeField] private LevelManager levelmanager;
     [SerializeField] private EventMaker eventMaker;
+    [SerializeField] private GameObject highlight;
 
     List<string> colors = null;
 
@@ -86,12 +87,14 @@ public class FarmerQuest : MonoBehaviour {
 
     public void Success()
     {
+        highlight.SetActive(false);
         levelmanager.AddMoney(quest.Reward);
         eventMaker.RandomPositiveEvent();
         EndCurrentQuest();
     }
     public void Fail()
     {
+        highlight.SetActive(false);
         LevelManager.NB_FAILS++;
         eventMaker.RandomNegativeEvent();
         EndCurrentQuest();
@@ -115,6 +118,7 @@ public class FarmerQuest : MonoBehaviour {
 
     public void AcceptQuest()
     {
+        highlight.SetActive(true);
         questManager.ActivateQuest(this.GetComponent<Collider>());
         questHUD.ActivateHUD(quest);
     }
