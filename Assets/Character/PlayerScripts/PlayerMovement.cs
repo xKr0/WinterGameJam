@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 		movement = Camera.main.transform.TransformDirection(movement);
 		movement.y = 0.0f;
         Turn(movement);
-        transform.Translate (movement * speed * Time.deltaTime, Space.World);
+        transform.Translate (movement * speed * Time.fixedDeltaTime, Space.World);
     }
 
     void Turn(Vector3 movement)
