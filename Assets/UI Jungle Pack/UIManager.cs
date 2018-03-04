@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Transform quitter;
     [SerializeField] Transform back;
 
-    [SerializeField] AudioSource source;
+    private AudioSource source;
 
     // Pause Menu
     public static bool isPaused = false;
@@ -42,7 +42,7 @@ public class UIManager : MonoBehaviour
         HUD.gameObject.SetActive(true);
         gameOverMenu.gameObject.SetActive(false);
 
-
+        source = gameManager.gameObject.GetComponent<AudioSource>();
         //Debug.Log(source != null);
         //source.playOnAwake = false;
 
@@ -110,12 +110,12 @@ public class UIManager : MonoBehaviour
         button.GetComponent<Image>().sprite = buttonSelected;
         //source.clip = changeSound;
         //Debug.Log("ici " + source.clip != null);
-        source.Play();
 
     }
     public void UnselectItem(Transform button)
     {
         button.GetComponent<Image>().sprite = buttonNotSelected;
+        //source.Play();
     }
 
     void Update()
