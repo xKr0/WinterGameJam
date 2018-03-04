@@ -9,47 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1674552907199080}
+  m_RootGameObject: {fileID: 1299359047739338}
   m_IsPrefabParent: 1
---- !u!1 &1674552907199080
+--- !u!1 &1299359047739338
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4297707050089772}
-  - component: {fileID: 114966679488484776}
+  - component: {fileID: 4014482565917970}
+  - component: {fileID: 114198067207488186}
   m_Layer: 0
-  m_Name: CSVmanager
+  m_Name: TextBoxManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4297707050089772
+--- !u!4 &4014482565917970
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1674552907199080}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.93, y: 0.63, z: 1.94}
+  m_GameObject: {fileID: 1299359047739338}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 25.38, y: 1.13, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114966679488484776
+--- !u!114 &114198067207488186
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1674552907199080}
+  m_GameObject: {fileID: 1299359047739338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f9ea7edcfd88d44bb2a6936287ebd8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6709f236dd8b64e44945f1527c8018b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvQuete: {fileID: 4900000, guid: e9bb4db2f9149b44e9268a41401ad52a, type: 3}
-  csvDialog: {fileID: 4900000, guid: 78b749e594243d54aab64e8ae9f98c19, type: 3}
+  textBox: {fileID: 0}
+  acceptMission: 0
