@@ -2900,7 +2900,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4688481710510772}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: TrashPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3377,7 +3377,7 @@ GameObject:
   - component: {fileID: 33956099712901326}
   - component: {fileID: 136809909730807546}
   - component: {fileID: 23643827279942788}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13264,7 +13264,7 @@ GameObject:
   - component: {fileID: 33995180130397812}
   - component: {fileID: 23993388660150614}
   - component: {fileID: 64550719817497582}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Trash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14127,7 +14127,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4744230330751590}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: TrashEntry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15094,7 +15094,7 @@ GameObject:
   - component: {fileID: 4890248851563436}
   - component: {fileID: 65325948719668396}
   - component: {fileID: 114380101488864348}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17621,7 +17621,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4615403521737134}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20470,7 +20470,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1372283205623774}
-  m_LocalRotation: {x: -0.00006347537, y: 0.00022816515, z: 0.00042708797, w: 0.9999999}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -33197,8 +33197,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1801148335875614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: -0, z: 18.16}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.3, y: 0, z: 19.73}
+  m_LocalScale: {x: 1.1511432, y: 1.6107827, z: 2.1262944}
   m_Children: []
   m_Father: {fileID: 4022380439025344}
   m_RootOrder: 2
@@ -72548,10 +72548,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheep: {fileID: 1266403937976234, guid: e6eb06db0a759d540a126c455fbc38ce, type: 2}
-  colorEnum: 1
+  colorEnum: 8
   spawnTime: 3
   spawnPoint: {fileID: 4496267915159018}
   price: 3
+  propulsion: 350
 --- !u!114 &114054205052758384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72568,6 +72569,7 @@ MonoBehaviour:
   spawnTime: 3
   spawnPoint: {fileID: 4853591694401784}
   price: 3
+  propulsion: 350
 --- !u!114 &114096375316343898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72580,10 +72582,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheep: {fileID: 1266403937976234, guid: e6eb06db0a759d540a126c455fbc38ce, type: 2}
-  colorEnum: 2
+  colorEnum: 4
   spawnTime: 3
   spawnPoint: {fileID: 4210425624412246}
   price: 3
+  propulsion: 350
 --- !u!114 &114318746362838564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72596,10 +72599,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheep: {fileID: 1266403937976234, guid: e6eb06db0a759d540a126c455fbc38ce, type: 2}
-  colorEnum: 4
+  colorEnum: 12
   spawnTime: 3
   spawnPoint: {fileID: 4115993709108186}
   price: 3
+  propulsion: 350
 --- !u!114 &114380101488864348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72625,10 +72629,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheep: {fileID: 1266403937976234, guid: e6eb06db0a759d540a126c455fbc38ce, type: 2}
-  colorEnum: 3
+  colorEnum: 13
   spawnTime: 3
   spawnPoint: {fileID: 4343930526171912}
   price: 3
+  propulsion: 350
 --- !u!136 &136015252299603580
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -77,6 +77,7 @@ public class PlayerGrab : MonoBehaviour {
 
     void Throw()
     {
+        carriedSheep.GetComponent<Sheep>().IsGrabbed = false;
         carriedSheep.attachedRigidbody.isKinematic = false;
         carriedSheep.attachedRigidbody.AddForce(transform.forward * speedThrow);
         carriedSheep.GetComponent<ResetBehaviour>().enabled = true;
