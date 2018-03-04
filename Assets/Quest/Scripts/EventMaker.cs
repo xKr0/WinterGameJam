@@ -131,14 +131,17 @@ public class EventMaker :MonoBehaviour {
 
         for (int i = 0; i < allSheeps.Length; i++)
         {
-            if (allSheeps[i].GetComponent<ColorModule>().MyColor == ColorSheepEnum.Trash)
+            if (allSheeps[i] != null)
             {
-                if (allSheeps[i] != null)
+                if (allSheeps[i].GetComponent<ColorModule>().MyColor == ColorSheepEnum.Trash)
                 {
-                    allSheeps[i].GetComponent<ColorModule>().ParticleExplosion.Play();
-                    GameObject.Destroy(allSheeps[i], 0.5f);
-                }
-            }   
+                    if (allSheeps[i] != null)
+                    {
+                        allSheeps[i].GetComponent<ColorModule>().ParticleExplosion.Play();
+                        GameObject.Destroy(allSheeps[i], 0.5f);
+                    }
+                }   
+            }
         }
     }
 

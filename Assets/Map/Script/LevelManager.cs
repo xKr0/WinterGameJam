@@ -13,16 +13,20 @@ public class LevelManager : MonoBehaviour {
     public int MAX_SHEEP = 25;
 	// Use this for initialization
 
+    [SerializeField] AudioSource source;
+
     int money = 30;
     public int Money{ get{return money;} set{money = value;}}
 
     public void AddMoney(int amount){
         //play gliggling sound
+        source.Play();
         money += amount;
     }
 
     public void RemoveMoney(int amount){
         //play gliggling sound
+        source.Play();
         money -= amount;
     }
 }
