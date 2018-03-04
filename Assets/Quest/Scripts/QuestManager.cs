@@ -21,41 +21,20 @@ public class QuestManager : MonoBehaviour
 
     public bool IsOnMission
     {
-        get
-        {
-            return isOnMission;
-        }
-
-        set
-        {
-            isOnMission = value;
-        }
+        get { return isOnMission; }
+        set { isOnMission = value; }
     }
 
     public bool IsDone
     {
-        get
-        {
-            return isDone;
-        }
-
-        set
-        {
-            isDone = value;
-        }
+        get { return isDone; }
+        set { isDone = value; }
     }
 
     public bool IsSuccess
     {
-        get
-        {
-            return isSuccess;
-        }
-
-        set
-        {
-            isSuccess = value;
-        }
+        get { return isSuccess; }
+        set { isSuccess = value; }
     }
 
     public void ActivateQuest(Quest quest, Collider client)
@@ -90,7 +69,7 @@ public class QuestManager : MonoBehaviour
         // unregister event
         currentClient.GetComponent<Detector>().OnDetect -= TestColor;
 
-        if (testColor == ColorSheepEnum.Red)
+        if (testColor == currentQuest.ColorGoal)
         {
             SucceedQuest();
         }

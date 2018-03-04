@@ -11,6 +11,21 @@ public class Quest {
     [SerializeField] private GetDialog csvManager;
     private List<string> colorList;
 
+    private bool isDone = false;
+    private bool isSuccess = false;
+
+    public bool IsDone
+    {
+        get { return isDone; }
+        set { isDone = value; }
+    }
+
+    public bool IsSuccess
+    {
+        get { return isSuccess; }
+        set { isSuccess = value; }
+    }
+
     public string Text
     {
         get
