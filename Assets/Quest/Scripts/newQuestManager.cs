@@ -15,21 +15,16 @@ public class newQuestManager : MonoBehaviour
 
     public Collider CurrentClient
     {
-        get
-        {
-            return currentClient;
-        }
-
-        set
-        {
-            currentClient = value;
-        }
+        get { return currentClient; }
+        set { currentClient = value; }
     }
 
     public void ActivateQuest(Quest quest, Collider client)
     {
         currentQuest = quest;
+        currentQuest.Timer = 1200.0f;
         currentClient = client;
+        currentClient.GetComponent<Detector>().OnDetect += TestColor;
         isOnMission = true;
         questHUD.SetActive(true);
         text.text = quest.Text;
@@ -53,20 +48,30 @@ public class newQuestManager : MonoBehaviour
         }
     }
 
-    void RegisterClientEvent()
+    void TestColor(ColorManager.ColorList testColor)
     {
-        
+        // unregister event
+        currentClient.GetComponent<Detector>().OnDetect -= TestColor;
+
+        if (testColor == ColorManager.ColorList.Red)
+        {
+            SucceedQuest();
+        }
+        else
+        {
+            FailQuest();
+        }
     }
 
     void SucceedQuest()
     {
-        Debug.Log("Time.out");
+        Debug.Log("Success!");
         ResetAll();
     }
 
     void FailQuest()
     {
-        Debug.Log("Time.out");
+        Debug.Log("Fail");
         ResetAll();
     }
 

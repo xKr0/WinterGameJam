@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 136122987947560398}
   - component: {fileID: 136991589481851804}
   - component: {fileID: 114235928109447452}
+  - component: {fileID: 114952760790857836}
   m_Layer: 0
   m_Name: Farmer
   m_TagString: PNJ
@@ -1950,7 +1951,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1167966486536886}
-  m_LocalRotation: {x: -0.0059114313, y: -0.67944837, z: 0.7336993, w: -0.00066563475}
+  m_LocalRotation: {x: -0.005911431, y: -0.67944837, z: 0.7336993, w: -0.00066563475}
   m_LocalPosition: {x: -0.14276123, y: 0.032653574, z: 0.13977996}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_Children: []
@@ -3067,6 +3068,18 @@ MonoBehaviour:
   csvManager: {fileID: 0}
   questManager: {fileID: 0}
   textBoxManager: {fileID: 0}
+--- !u!114 &114952760790857836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1160629019540764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b000412b5632a47950c18263f8f09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Sheep
 --- !u!136 &136122987947560398
 CapsuleCollider:
   m_ObjectHideFlags: 1
