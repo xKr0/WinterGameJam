@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,10 +11,11 @@ public class FarmerQuest : MonoBehaviour {
     [SerializeField] private QuestManager questManager;
     [SerializeField] private TextBoxManager textBoxManager;
     [SerializeField] private QuestHUDManager questHUD;
+
     List<string> colors = new List<string>();
     private bool neverSeen = true;
-
     private string hello;
+    private FarmerStateMachine fsmFarmer;
 
     public bool IsInteracting
     {
@@ -25,11 +27,37 @@ public class FarmerQuest : MonoBehaviour {
         }
     }
 
+    public Quest Quest
+    {
+        get
+        {
+            return quest;
+        }
+
+        set
+        {
+            quest = value;
+        }
+    }
+
+    public QuestManager QuestManager
+    {
+        get
+        {
+            return questManager;
+        }
+
+        set
+        {
+            questManager = value;
+        }
+    }
+
     // Use this for initialization
     void Start ()
     {
         colors = csvManager.getColor();
-        GenerateQuest();
+        fsmFarmer = new FarmerStateMachine(this);
         //Debug.Log(quest);
         hello = csvManager.getTextDialog("hello");
     }
@@ -37,57 +65,71 @@ public class FarmerQuest : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-         if (neverSeen && isInteracting)
-         {
-            PlayerSpec.canMove = false;
-            //Debug.Log("Dialogue");
-            textBoxManager.WriteDialog(hello);
-            if (PlayerSpec.pressSubmit)
-            {
-                neverSeen = false;
-            }
-         }
-
-        else if (isInteracting && questManager.CurrentClient == null)
+        if (IsInteracting)
         {
-            textBoxManager.WriteQuest(quest);
-            //Apres avoir accepter la quete
-            PlayerSpec.canMove = false;
-            if (PlayerSpec.pressSubmit)
-            {
-                AcceptQuest();
-            }
-            else if (PlayerSpec.pressCancel)
-            {
-                Debug.Log("Quete refuse");
-                PlayerSpec.canMove = true;
-                isInteracting = false;
-            }
-        }
-        else
-        {
-            //Apres avoir accepter ou refuse
-            textBoxManager.stopSpeaking();
-        }               
+            fsmFarmer.ProcessInput();
+        }       
 	}
+
+    public void ShowRandomText()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowAcceptText()
+    {
+        throw new NotImplementedException();
+    }
 
     private string GetRandomColor()
     {
-        string randomColor = colors[Random.Range(0, colors.Count)];
-        return randomColor;
+        return colors[UnityEngine.Random.Range(0, colors.Count)];
     }
 
-    void GenerateQuest()
+    public void PickRandomQuest()
     {
         string color = GetRandomColor();
         quest = new Quest(color, csvManager.getTextQuete(color));
     }
 
-    private void AcceptQuest()
+    public void ShowQuestText()
     {
-        Debug.Log("Quete accepte");
+        textBoxManager.Write(quest.Text);
+    }
+
+    public void ShowSuccessText()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Success()
+    {
+        throw new NotImplementedException();
+    }
+    public void Fail()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowHelloText()
+    {
+        textBoxManager.Write(hello);
+    }
+
+    public void ShowFailText()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void AcceptQuest()
+    {
         questManager.ActivateQuest(quest, this.GetComponent<Collider>());
         questHUD.ActivateHUD(quest);
-        PlayerSpec.canMove = true;
     }
+
+    public void StopTalking()
+    {
+        textBoxManager.stopSpeaking();
+    }
+
 }

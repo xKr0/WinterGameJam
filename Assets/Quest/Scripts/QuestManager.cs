@@ -6,7 +6,10 @@ public class QuestManager : MonoBehaviour
 {
     private Quest currentQuest = null;
     private Collider currentClient = null;
+
     private bool isOnMission = false;
+    private bool isDone = false;
+    private bool isSuccess = false;
 
     private float timer = 0.0f;
 
@@ -14,6 +17,45 @@ public class QuestManager : MonoBehaviour
     {
         get { return currentClient; }
         set { currentClient = value; }
+    }
+
+    public bool IsOnMission
+    {
+        get
+        {
+            return isOnMission;
+        }
+
+        set
+        {
+            isOnMission = value;
+        }
+    }
+
+    public bool IsDone
+    {
+        get
+        {
+            return isDone;
+        }
+
+        set
+        {
+            isDone = value;
+        }
+    }
+
+    public bool IsSuccess
+    {
+        get
+        {
+            return isSuccess;
+        }
+
+        set
+        {
+            isSuccess = value;
+        }
     }
 
     public void ActivateQuest(Quest quest, Collider client)

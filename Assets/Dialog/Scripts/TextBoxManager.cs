@@ -15,17 +15,12 @@ public class TextBoxManager : MonoBehaviour {
         text = textBox.GetComponentInChildren<Text>();
 	}
 
-    public void WriteQuest(Quest quest)
+    public void Write(string texte)
     {
         textBox.SetActive(true);
-        text.text = quest.Text;
+        text.text = texte;
     }
 
-    public void WriteDialog(string dialog)
-    {
-        text.text = dialog;
-        textBox.SetActive(true);
-    }
     public void stopSpeaking()
     {
         textBox.SetActive(false);
