@@ -60,6 +60,7 @@ public class PlayerGrab : MonoBehaviour {
         isHolding = true;
         carriedSheep.GetComponent<Sheep>().IsGrabbed = true;
         carriedSheep.GetComponent<SheepAgent>().enabled = false;
+        carriedSheep.GetComponent<SheepAgent>().PlaySound();
         carriedSheep.GetComponent<Animator>().SetBool("Running", false);
         carriedSheep.attachedRigidbody.isKinematic = true;
     }
@@ -81,7 +82,7 @@ public class PlayerGrab : MonoBehaviour {
         carriedSheep.attachedRigidbody.isKinematic = false;
         carriedSheep.attachedRigidbody.AddForce(transform.forward * speedThrow);
         carriedSheep.GetComponent<ResetBehaviour>().enabled = true;
-
+        carriedSheep.GetComponent<SheepAgent>().PlaySound();
         isHolding = false;
         carriedSheep = null;
     }

@@ -7,6 +7,8 @@ public class SheepAgent : Agent
     [SerializeField] WanderBehaviour wander;
     //[SerializeField] Sensor preyInSight;
 
+    [SerializeField] AudioSource source;
+
 
     
     void Start()
@@ -29,5 +31,8 @@ public class SheepAgent : Agent
        
     }
 
+    public void PlaySound(){
+        source.Play();
+    }
 
 }
