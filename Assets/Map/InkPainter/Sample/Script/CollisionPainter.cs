@@ -8,16 +8,20 @@ namespace Es.InkPainter.Sample
 		[SerializeField]
 		private Brush brush = null;
 
+        public void SetBrushColor(Color color){
+            brush.Color = color;
+        }
+
 		[SerializeField]
 		private int wait = 3;
 
 		private int waitCount;
 
-        ColorManager.ColorList myColor;
+       // ColorManager.ColorList myColor;
 
 		public void Awake()
 		{
-            myColor = GetComponent<ColorModule>().MyColor;
+            //myColor = GetComponent<ColorModule>().MyColor;
             //get la couleur rgb 
 
 
