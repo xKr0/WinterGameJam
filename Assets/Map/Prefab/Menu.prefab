@@ -875,6 +875,8 @@ MonoBehaviour:
   backCredits: {fileID: 1539938944748964}
   buttonSelected: {fileID: 21300002, guid: 6128ff6b1c7dfca469c0ca3099526136, type: 3}
   buttonNotSelected: {fileID: 21300006, guid: 6128ff6b1c7dfca469c0ca3099526136, type: 3}
+  controlsButton: {fileID: 224559866660811496}
+  creditsButton: {fileID: 224740297683768570}
 --- !u!114 &114240257724905774
 MonoBehaviour:
   m_ObjectHideFlags: 1
