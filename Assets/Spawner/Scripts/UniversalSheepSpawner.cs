@@ -37,14 +37,12 @@ public class UniversalSheepSpawner : MonoBehaviour {
 
     void SpawnAtStart()
     {
-        if (!LevelManager.ONCE_ALL_SPAWNED)
-        {
-            if (LevelManager.NB_SHEEPS >= levelManager.MAX_SHEEP)
+
+            if (LevelManager.NB_SHEEPS < levelManager.MAX_SHEEP)
             {
-                LevelManager.ONCE_ALL_SPAWNED = true;
+                 Spawn();
             }
-            Spawn();
-        }
+            
     }
 
     public void Spawn(){

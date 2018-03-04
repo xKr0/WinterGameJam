@@ -21,4 +21,8 @@ public class Sheep : MonoBehaviour
         get { return isGrabbed; }
         set { isGrabbed = value; }
     }
+
+    void OnDestroy(){
+        LevelManager.NB_SHEEPS--;
+    }
 }
