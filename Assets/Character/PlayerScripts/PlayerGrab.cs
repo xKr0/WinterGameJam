@@ -10,6 +10,12 @@ public class PlayerGrab : MonoBehaviour {
     [SerializeField] TriggerDetector triggerDetector;
 
     private Collider carriedSheep = null;
+
+    public Collider CarriedSheep
+    {
+        get { return carriedSheep; }
+    }
+
     private bool isHolding = false;
 
     private void Start()
