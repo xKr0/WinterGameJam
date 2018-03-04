@@ -24,6 +24,8 @@ public class ColorModule : MonoBehaviour {
         set { myColor = value; }
     }
 
+    public ParticleSystem ParticleExplosion{ get{return particleExplosion;}}
+
 	// Use this for initialization
 	void Start () {
         colorManager = FindObjectOfType<ColorManager>();

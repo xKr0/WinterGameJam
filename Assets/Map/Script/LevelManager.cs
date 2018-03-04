@@ -11,18 +11,8 @@ public class LevelManager : MonoBehaviour {
     public int MAX_SHEEP = 15;
 	// Use this for initialization
 
-    int money = 50;
+    int money = 30;
     public int Money{ get{return money;} set{money = value;}}
-
-    //public AudioClip music;
-
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void AddMoney(int amount){
         //play gliggling sound

@@ -76,7 +76,7 @@ public class FarmerStateMachine
         if (PlayerSpec.pressSubmit || PlayerSpec.pressCancel)
         {
             CloseDialogWindow();
-            farmerQuest.Success();
+            farmerQuest.Fail();
         }
     }
 
@@ -85,7 +85,7 @@ public class FarmerStateMachine
         if (PlayerSpec.pressSubmit || PlayerSpec.pressCancel)
         {
             CloseDialogWindow();
-            farmerQuest.Fail();
+            farmerQuest.Success();
         }
     }
 

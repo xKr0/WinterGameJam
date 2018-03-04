@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpSpeed;
     [SerializeField] Animator anim;
     [SerializeField] Rigidbody rgbd;
+    [SerializeField] Camera cameraPlayer;
+
     Vector3 lastMove;
 
     bool isGrounded = true;
@@ -34,11 +36,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Move ()
     {
-        Vector3 movement = new Vector3(PlayerSpec.moveH, 0.0f, PlayerSpec.moveV);
-		movement = Camera.main.transform.TransformDirection(movement);
-		movement.y = 0.0f;
-        Turn(movement);
-        transform.Translate (movement * speed * Time.fixedDeltaTime, Space.World);
+        if (cameraPlayer.enabled)
+        {
+            Vector3 movement = new Vector3(PlayerSpec.moveH, 0.0f, PlayerSpec.moveV);
+            movement = cameraPlayer.transform.TransformDirection(movement);
+            movement.y = 0.0f;
+            Turn(movement);
+            transform.Translate(movement * speed * Time.fixedDeltaTime, Space.World);
+        }
     }
 
     void Turn(Vector3 movement)

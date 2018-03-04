@@ -12,7 +12,7 @@ public class UniversalSheepSpawner : MonoBehaviour {
     [SerializeField] private ColorSheepEnum colorEnum;
 
     [Tooltip("Time between spawn")]
-    [SerializeField] private float spawnTime = 3f;    
+    [SerializeField] private float spawnTime = 1.5f;    
     // How long between each spawn.
     [Tooltip("Position where the sheep can spawn")]
     [SerializeField] private Transform spawnPoint;         // An array of the spawn points this enemy can spawn from.

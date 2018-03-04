@@ -11,6 +11,8 @@ public class FarmerQuest : MonoBehaviour {
     [SerializeField] private QuestManager questManager;
     [SerializeField] private TextBoxManager textBoxManager;
     [SerializeField] private QuestHUDManager questHUD;
+    [SerializeField] private LevelManager levelmanager;
+    [SerializeField] private EventMaker eventMaker;
 
     List<string> colors = new List<string>();
 
@@ -80,11 +82,13 @@ public class FarmerQuest : MonoBehaviour {
 
     public void Success()
     {
-        
+        levelmanager.AddMoney(quest.Reward);
+        eventMaker.RandomPositiveEvent();
         EndCurrentQuest();
     }
     public void Fail()
     {
+        eventMaker.RandomNegativeEvent();
         EndCurrentQuest();
     }
 

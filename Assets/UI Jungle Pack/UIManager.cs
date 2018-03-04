@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviour
     public static bool pressStart = false;
 
     // HUD
+    [SerializeField]
     private Transform HUDText;
 
     private bool isGameOver;
@@ -46,7 +47,7 @@ public class UIManager : MonoBehaviour
         //Debug.Log(source != null);
         //source.playOnAwake = false;
 
-        HUDText = HUD.GetChild(0).Find("Gold").Find("GoldLevel");
+        //HUDText = HUD.GetChild(0).Find("Gold").Find("GoldLevel");
     }
 
 

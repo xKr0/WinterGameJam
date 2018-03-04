@@ -647,7 +647,7 @@ MonoBehaviour:
   sheepRenderer: {fileID: 137719234907034012}
   particleExplosion: {fileID: 198221631263921120}
   trail: {fileID: 198444009323450652}
-  myColor: 13
+  myColor: 0
 --- !u!114 &114601473723203500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -659,7 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc44d6b1f3798c4bb13f0f033f7162e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForce: 1
+  maxForce: 2
   ownTransform: {fileID: 4362995222750486}
   wander:
     power: 2.25
