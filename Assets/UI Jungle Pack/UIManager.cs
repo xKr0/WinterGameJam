@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Transform quitter;
     [SerializeField] Transform back;
 
+
     private AudioSource source;
 
     // Pause Menu
@@ -34,6 +35,8 @@ public class UIManager : MonoBehaviour
     // HUD
     [SerializeField]
     private Transform HUDText;
+
+	[SerializeField] private GameObject healthPanel;
 
     private bool isGameOver;
 
@@ -124,7 +127,7 @@ public class UIManager : MonoBehaviour
 	{
         float goldAmount;
         string goldText;
-        if (LevelManager.NB_FAILS >= 5)
+		if (LevelManager.NB_FAILS >= LevelManager.MAX_HEALTH)
         {
             Time.timeScale = 0f;
             gameOverMenu.gameObject.SetActive(true);
@@ -138,7 +141,16 @@ public class UIManager : MonoBehaviour
         goldAmount = gameManager.GetComponent<LevelManager>().Money;
         goldText = "x " + goldAmount;
         HUDText.GetComponent<Text>().text = goldText;
+		if (LevelManager.MAX_HEALTH - LevelManager.NB_FAILS < healthPanel.GetComponentsInChildren<Image>().Length)
+		{
+			RemoveHealth (LevelManager.MAX_HEALTH - LevelManager.NB_FAILS);
+		}
 
+	}
+
+	void RemoveHealth(int index)
+	{
+		healthPanel.transform.GetChild (index-1).gameObject.SetActive(false);
 	}
 
     void BackToMenu(){
