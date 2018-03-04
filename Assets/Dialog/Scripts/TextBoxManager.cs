@@ -8,7 +8,6 @@ public class TextBoxManager : MonoBehaviour {
     public GameObject textBox;
     private Text text;
     //Detect if the current dialog is a mission
-    private bool isMission = false;
     public bool acceptMission = false;
 
 
@@ -28,12 +27,6 @@ public class TextBoxManager : MonoBehaviour {
         }
         Debug.Log(csvManager.getColor());*/
 	}
-
-    void Update()
-    {
-
-    }
-
 
     public void WriteQuest(Quest quest)
     {

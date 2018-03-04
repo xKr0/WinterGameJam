@@ -6,12 +6,8 @@ public class Combinaison  {
 
     public ColorManager.ColorList[,] combinaisons;
 
-    ColorManager colorManager;
-
     public Combinaison(ColorManager colorManager)
     {
-        this.colorManager = colorManager;
-
         combinaisons = new ColorManager.ColorList[colorManager.GetColorCount(), colorManager.GetColorCount()];
 
         for (int i = 0; i < colorManager.GetColorCount(); i++)

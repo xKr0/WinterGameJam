@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class GoToTrash : MonoBehaviour {
 
-    [SerializeField]
-    float speed = 5.0f;
-
     bool isEnable = false;
 
     public bool IsEnable

@@ -8,8 +8,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody rgbd;
     Vector3 lastMove;
 
-    bool canJump=true;
-
     bool isGrounded = true;
 
     void Start()
@@ -32,16 +30,6 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = false;
         rgbd.velocity = Vector3.up * jumpSpeed;
-
-
-           
-        /*Vector3 velocity = rgbd.velocity;
-
-        if (Mathf.Abs(velocity.y) <= 0.05f)
-        {
-            velocity.y = jumpSpeed;
-            rgbd.velocity = velocity;
-        }*/
     }
 
     void Move ()
@@ -82,8 +70,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision)
-    {
-        
+    {        
         if (collision.gameObject.layer==8 || collision.gameObject.layer==9)
         {
             isGrounded = true;

@@ -4,19 +4,8 @@ using UnityEngine;
 
 public class FarmerDialogManager : MonoBehaviour {
 
-    private CapsuleCollider collider;
     public bool waitForDialog = false;
     public bool isOnMission = false;
-
-    // Use this for initialization
-    void Start () {
-        collider = this.GetComponent<CapsuleCollider>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void BeginMission()
     {
@@ -28,7 +17,6 @@ public class FarmerDialogManager : MonoBehaviour {
     {
         isOnMission = false;
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -42,6 +30,7 @@ public class FarmerDialogManager : MonoBehaviour {
         }
 
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")

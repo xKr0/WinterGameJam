@@ -23,8 +23,6 @@ public class UniversalSheepSpawner : MonoBehaviour {
     [Tooltip("Sound to play when popping")]
     [SerializeField]  AudioSource source;
 
-
-    bool canBuy = false;
     LevelManager levelManager;
 
     [SerializeField]
