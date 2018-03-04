@@ -6,9 +6,11 @@ public class LevelManager : MonoBehaviour {
 
     public static int NB_SHEEPS = 0;
 
+    public static int NB_FAILS = 0;
+
     public static bool ONCE_ALL_SPAWNED = false;
 
-    public int MAX_SHEEP = 15;
+    public int MAX_SHEEP = 25;
 	// Use this for initialization
 
     int money = 30;

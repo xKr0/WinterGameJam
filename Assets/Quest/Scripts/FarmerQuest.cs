@@ -88,6 +88,7 @@ public class FarmerQuest : MonoBehaviour {
     }
     public void Fail()
     {
+        LevelManager.NB_FAILS++;
         eventMaker.RandomNegativeEvent();
         EndCurrentQuest();
     }

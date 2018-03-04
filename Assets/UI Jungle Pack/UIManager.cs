@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Transform pauseMenu;
     [SerializeField] Transform HUD;
     [SerializeField] Transform gameOverMenu;
+    [SerializeField] Transform backGO;
     [SerializeField] Transform controls;
 
     [SerializeField] Transform reprendre;
@@ -49,7 +51,6 @@ public class UIManager : MonoBehaviour
 
         //HUDText = HUD.GetChild(0).Find("Gold").Find("GoldLevel");
     }
-
 
     private void MenuOn ()
     {
@@ -123,7 +124,12 @@ public class UIManager : MonoBehaviour
 	{
         float goldAmount;
         string goldText;
-
+        if (LevelManager.NB_FAILS >= 5)
+        {
+            Time.timeScale = 0f;
+            gameOverMenu.gameObject.SetActive(true);
+            backGO.GetComponent<Button>().Select();
+        }
         if (pressStart)
         { 
             PauseMenuStatusChange();
@@ -134,5 +140,9 @@ public class UIManager : MonoBehaviour
         HUDText.GetComponent<Text>().text = goldText;
 
 	}
+
+    void BackToMenu(){
+        SceneManager.LoadScene("Launch");
+    }
 
 }

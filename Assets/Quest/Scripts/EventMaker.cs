@@ -96,8 +96,11 @@ public class EventMaker :MonoBehaviour {
         for (int i = 0; i < allSheeps.Length; i++)
         {
             int randomColorEnum = Random.Range(0, 15);
-            allSheeps[i].GetComponent<ColorModule>().ParticleExplosion.Play();
-            allSheeps[i].GetComponent<ColorModule>().SetSheepColor((ColorSheepEnum)randomColorEnum);
+            if (allSheeps[i] != null)
+            {
+                allSheeps[i].GetComponent<ColorModule>().ParticleExplosion.Play();
+                allSheeps[i].GetComponent<ColorModule>().SetSheepColor((ColorSheepEnum)randomColorEnum);
+            }
         }
     }
 
@@ -105,7 +108,10 @@ public class EventMaker :MonoBehaviour {
        
         for (int i = 0; i < allSheeps.Length; i++)
         {
-            allSheeps[i].GetComponent<Rigidbody>().AddForce(allSheeps[i].GetComponent<Transform>().forward * propulsion);
+            if (allSheeps[i] != null)
+            {
+                allSheeps[i].GetComponent<Rigidbody>().AddForce(allSheeps[i].GetComponent<Transform>().forward * propulsion);
+            }
         }
     }
 
@@ -113,8 +119,11 @@ public class EventMaker :MonoBehaviour {
 
         for (int i = 0; i < allSheeps.Length/0.2f; i++)
         {
-            allSheeps[i].GetComponent<ColorModule>().ParticleExplosion.Play();
-            GameObject.Destroy(allSheeps[i], 0.5f);
+            if (allSheeps[i] != null)
+            {
+                allSheeps[i].GetComponent<ColorModule>().ParticleExplosion.Play();
+                GameObject.Destroy(allSheeps[i], 0.5f);
+            }
         }
     }
 
@@ -124,8 +133,11 @@ public class EventMaker :MonoBehaviour {
         {
             if (allSheeps[i].GetComponent<ColorModule>().MyColor == ColorSheepEnum.Trash)
             {
-                allSheeps[i].GetComponent<ColorModule>().ParticleExplosion.Play();
-                GameObject.Destroy(allSheeps[i], 0.5f);
+                if (allSheeps[i] != null)
+                {
+                    allSheeps[i].GetComponent<ColorModule>().ParticleExplosion.Play();
+                    GameObject.Destroy(allSheeps[i], 0.5f);
+                }
             }   
         }
     }
