@@ -686,7 +686,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9056c058ab4786046a7fe238811680b6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: addea143baf54cd4b8fc6da5913535ff, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -700,7 +700,7 @@ AudioSource:
   MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
@@ -838,7 +838,7 @@ MonoBehaviour:
   sheepRenderer: {fileID: 137719234907034012}
   particleExplosion: {fileID: 198221631263921120}
   trail: {fileID: 198444009323450652}
-  myColor: 13
+  myColor: 8
 --- !u!114 &114601473723203500
 MonoBehaviour:
   m_ObjectHideFlags: 1
