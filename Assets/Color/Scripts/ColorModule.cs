@@ -15,11 +15,11 @@ public class ColorModule : MonoBehaviour {
     ParticleSystem trail;
 
     [SerializeField]
-    ColorList myColor;
+    ColorSheepEnum myColor;
 
     ColorManager colorManager;
 
-    public ColorList MyColor {
+    public ColorSheepEnum MyColor {
         get { return myColor; }
         set { myColor = value; }
     }
@@ -33,7 +33,7 @@ public class ColorModule : MonoBehaviour {
         SetSheepColor(myColor);
     }
 
-    public void SetSheepColor(ColorList color)
+    public void SetSheepColor(ColorSheepEnum color)
     {
         this.myColor = color;
         material.SetTexture("_MainTex", colorManager.GetTextureByColorEnum(color));
@@ -48,7 +48,7 @@ public class ColorModule : MonoBehaviour {
         {
             GetComponent<SheepAgent>().PlaySound();
             particleExplosion.Play();
-            ColorList color = colorManager.Combine(myColor, collision.gameObject.GetComponent<ColorModule>().MyColor);
+            ColorSheepEnum color = colorManager.Combine(myColor, collision.gameObject.GetComponent<ColorModule>().MyColor);
             SetSheepColor(color);
             collision.gameObject.GetComponent<ColorModule>().SetSheepColor(color);
         }        
