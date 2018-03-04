@@ -19,6 +19,7 @@ public class Detector : MonoBehaviour
     void Start()
     {
         playerGrab = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGrab>();
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -42,7 +43,8 @@ public class Detector : MonoBehaviour
             playerGrab.LetGo();
         }
 
-        Destroy(col.gameObject, 0.0f);
+        col.GetComponent<Sheep>().TriggerFX();
+        Destroy(col.gameObject, 2.0f);
     }
 	
 }
