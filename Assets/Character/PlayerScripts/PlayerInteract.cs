@@ -30,6 +30,8 @@ public class PlayerInteract : MonoBehaviour
     }
 
     void PnjInteraction(){
+		PlayerSpec.moveH = 0.0f;
+		PlayerSpec.moveV = 0.0f;
         PlayerSpec.canMove = false;
         pnjCollider.GetComponent<FarmerQuest>().IsInteracting = true;
     }
