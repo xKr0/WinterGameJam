@@ -483,7 +483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d833a02cacbfde4d891ef77dc8da827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
 --- !u!114 &114346332695990842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -495,6 +494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75e1b6e6219b334689bb99a9b644a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pouffx: {fileID: 0}
+  model: {fileID: 0}
 --- !u!114 &114548756379894460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -526,6 +527,7 @@ MonoBehaviour:
     power: 0
     isActive: 0
     enthropy: 0
+  source: {fileID: 0}
 --- !u!114 &114782981442192870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -537,7 +539,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cbff65e3fe0f104f882642a882e4f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sheepRenderer: {fileID: 137658436664384540}
   particleExplosion: {fileID: 198322006978265810}
+  trail: {fileID: 0}
   myColor: 0
 --- !u!137 &137658436664384540
 SkinnedMeshRenderer:

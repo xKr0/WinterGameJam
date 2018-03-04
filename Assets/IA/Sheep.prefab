@@ -452,7 +452,7 @@ Transform:
   m_GameObject: {fileID: 1266403937976234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.717201, y: 0.14918026, z: -2.565751}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4147022962562670}
   - {fileID: 4558215940962692}
@@ -838,7 +838,7 @@ MonoBehaviour:
   sheepRenderer: {fileID: 137719234907034012}
   particleExplosion: {fileID: 198221631263921120}
   trail: {fileID: 198444009323450652}
-  myColor: 10
+  myColor: 13
 --- !u!114 &114601473723203500
 MonoBehaviour:
   m_ObjectHideFlags: 1

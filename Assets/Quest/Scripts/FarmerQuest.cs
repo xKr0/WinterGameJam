@@ -14,7 +14,7 @@ public class FarmerQuest : MonoBehaviour {
     [SerializeField] private LevelManager levelmanager;
     [SerializeField] private EventMaker eventMaker;
 
-    List<string> colors = new List<string>();
+    List<string> colors = null;
 
     private FarmerStateMachine fsmFarmer;
 
@@ -39,13 +39,17 @@ public class FarmerQuest : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        colors = csvManager.getColor();
+        
         fsmFarmer = new FarmerStateMachine(this);
     }
 	
 	// Update is called once per frame
 	void Update ()
-    {      
+    {     
+        if (colors == null && csvManager.IsReady)
+        {
+            colors = csvManager.getColor();
+        }
         fsmFarmer.ProcessInput();    
 	}
 
