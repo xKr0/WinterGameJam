@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class LevelManager : MonoBehaviour {
 
@@ -18,6 +19,7 @@ public class LevelManager : MonoBehaviour {
 
     [SerializeField] AudioSource source;
     [SerializeField] GameObject winPanel;
+    [SerializeField] GameObject buttonBack;
     [SerializeField] GameObject rainbowPanel;
     [SerializeField] GameObject colorPrefab;
 
@@ -58,7 +60,7 @@ public class LevelManager : MonoBehaviour {
         {
             Time.timeScale = 0.0f;
             winPanel.SetActive(true);
-
+            buttonBack.GetComponent<Button>().Select();
             AdaptWinPanel();
         }
     }
