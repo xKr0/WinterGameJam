@@ -25,9 +25,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] Transform quitter;
     [SerializeField] Transform back;
 
-
-    private AudioSource source;
-
     // Pause Menu
     public static bool isPaused = false;
     public static bool pressStart = false;
@@ -47,12 +44,6 @@ public class UIManager : MonoBehaviour
         controls.gameObject.SetActive(false);
         HUD.gameObject.SetActive(true);
         gameOverMenu.gameObject.SetActive(false);
-
-        source = gameManager.gameObject.GetComponent<AudioSource>();
-        //Debug.Log(source != null);
-        //source.playOnAwake = false;
-
-        //HUDText = HUD.GetChild(0).Find("Gold").Find("GoldLevel");
     }
 
     private void MenuOn ()
