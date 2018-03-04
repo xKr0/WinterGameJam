@@ -7,8 +7,8 @@ public class Detector : MonoBehaviour
 {
     [SerializeField] string tagToDetect = "Sheep";
 
-    event Action<ColorManager.ColorList> _onDetect;
-    public event Action<ColorManager.ColorList> OnDetect
+    event Action<ColorList> _onDetect;
+    public event Action<ColorList> OnDetect
     {
         add { _onDetect += value; }
         remove { _onDetect -= value; }

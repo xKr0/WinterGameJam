@@ -4,96 +4,96 @@ using UnityEngine;
 
 public class Combinaison  {
 
-    public ColorManager.ColorList[,] combinaisons;
+    public ColorList[,] combinaisons;
 
     public Combinaison(ColorManager colorManager)
     {
-        combinaisons = new ColorManager.ColorList[colorManager.GetColorCount(), colorManager.GetColorCount()];
+        combinaisons = new  ColorList[colorManager.GetColorCount(), colorManager.GetColorCount()];
 
         for (int i = 0; i < colorManager.GetColorCount(); i++)
         {
             for (int j = 0; j < colorManager.GetColorCount(); j++)
             {
-                combinaisons[i,j] = ColorManager.ColorList.Trash;
+                combinaisons[i,j] = ColorList.Trash;
             }
         }   
         for (int i = 0; i < colorManager.GetColorCount(); i++)
         {
-            combinaisons[i, i] = (ColorManager.ColorList)i;
+            combinaisons[i, i] = (ColorList)i;
         }
 
         // line 1 (Red)
-        AddCombinaison(ColorManager.ColorList.Red, ColorManager.ColorList.Yellow, ColorManager.ColorList.Orange);
-        AddCombinaison(ColorManager.ColorList.Red, ColorManager.ColorList.Green, ColorManager.ColorList.Yellow);
-        AddCombinaison(ColorManager.ColorList.Red, ColorManager.ColorList.Cyan, ColorManager.ColorList.White);
-        AddCombinaison(ColorManager.ColorList.Red, ColorManager.ColorList.Blue, ColorManager.ColorList.Magenta);
-        AddCombinaison(ColorManager.ColorList.Red, ColorManager.ColorList.Magenta, ColorManager.ColorList.Pink);
+        AddCombinaison(ColorList.Red, ColorList.Yellow, ColorList.Orange);
+        AddCombinaison(ColorList.Red, ColorList.Green, ColorList.Yellow);
+        AddCombinaison(ColorList.Red, ColorList.Cyan, ColorList.White);
+        AddCombinaison(ColorList.Red, ColorList.Blue, ColorList.Magenta);
+        AddCombinaison(ColorList.Red, ColorList.Magenta, ColorList.Pink);
 
         // line 2 (Orange)
-        AddCombinaison(ColorManager.ColorList.Orange, ColorManager.ColorList.Apple, ColorManager.ColorList.Yellow);
-        AddCombinaison(ColorManager.ColorList.Orange, ColorManager.ColorList.Sky, ColorManager.ColorList.White);
-        AddCombinaison(ColorManager.ColorList.Orange, ColorManager.ColorList.Pink, ColorManager.ColorList.Red);
-        AddCombinaison(ColorManager.ColorList.Orange, ColorManager.ColorList.White, ColorManager.ColorList.Yellow);
-        AddCombinaison(ColorManager.ColorList.Orange, ColorManager.ColorList.Black, ColorManager.ColorList.Red);
+        AddCombinaison(ColorList.Orange, ColorList.Apple, ColorList.Yellow);
+        AddCombinaison(ColorList.Orange, ColorList.Sky, ColorList.White);
+        AddCombinaison(ColorList.Orange, ColorList.Pink, ColorList.Red);
+        AddCombinaison(ColorList.Orange, ColorList.White, ColorList.Yellow);
+        AddCombinaison(ColorList.Orange, ColorList.Black, ColorList.Red);
 
         // line 3 (Yellow)
-        AddCombinaison(ColorManager.ColorList.Yellow, ColorManager.ColorList.Green, ColorManager.ColorList.Apple);
-        AddCombinaison(ColorManager.ColorList.Yellow, ColorManager.ColorList.Cyan, ColorManager.ColorList.Green);
-        AddCombinaison(ColorManager.ColorList.Yellow, ColorManager.ColorList.Blue, ColorManager.ColorList.White);
-        AddCombinaison(ColorManager.ColorList.Yellow, ColorManager.ColorList.Magenta, ColorManager.ColorList.Red);
+        AddCombinaison(ColorList.Yellow, ColorList.Green, ColorList.Apple);
+        AddCombinaison(ColorList.Yellow, ColorList.Cyan, ColorList.Green);
+        AddCombinaison(ColorList.Yellow, ColorList.Blue, ColorList.White);
+        AddCombinaison(ColorList.Yellow, ColorList.Magenta, ColorList.Red);
 
         // line 4 (Apple)
-        AddCombinaison(ColorManager.ColorList.Apple, ColorManager.ColorList.Turqoise, ColorManager.ColorList.Green);
-        AddCombinaison(ColorManager.ColorList.Apple, ColorManager.ColorList.Purple, ColorManager.ColorList.White);
-        AddCombinaison(ColorManager.ColorList.Apple, ColorManager.ColorList.White, ColorManager.ColorList.Yellow);
-        AddCombinaison(ColorManager.ColorList.Apple, ColorManager.ColorList.Black, ColorManager.ColorList.Green);
+        AddCombinaison(ColorList.Apple, ColorList.Turqoise, ColorList.Green);
+        AddCombinaison(ColorList.Apple, ColorList.Purple, ColorList.White);
+        AddCombinaison(ColorList.Apple, ColorList.White, ColorList.Yellow);
+        AddCombinaison(ColorList.Apple, ColorList.Black, ColorList.Green);
 
         // line 5 (Green)
-        AddCombinaison(ColorManager.ColorList.Green, ColorManager.ColorList.Cyan, ColorManager.ColorList.Turqoise);
-        AddCombinaison(ColorManager.ColorList.Green, ColorManager.ColorList.Blue, ColorManager.ColorList.Cyan);
-        AddCombinaison(ColorManager.ColorList.Green, ColorManager.ColorList.Magenta, ColorManager.ColorList.White);
+        AddCombinaison(ColorList.Green, ColorList.Cyan, ColorList.Turqoise);
+        AddCombinaison(ColorList.Green, ColorList.Blue, ColorList.Cyan);
+        AddCombinaison(ColorList.Green, ColorList.Magenta, ColorList.White);
 
         // line 6 (Turqoise)
-        AddCombinaison(ColorManager.ColorList.Turqoise, ColorManager.ColorList.Sky, ColorManager.ColorList.Cyan);
-        AddCombinaison(ColorManager.ColorList.Turqoise, ColorManager.ColorList.Pink, ColorManager.ColorList.White);
-        AddCombinaison(ColorManager.ColorList.Turqoise, ColorManager.ColorList.White, ColorManager.ColorList.Cyan);
-        AddCombinaison(ColorManager.ColorList.Turqoise, ColorManager.ColorList.Black, ColorManager.ColorList.Green);
+        AddCombinaison(ColorList.Turqoise, ColorList.Sky, ColorList.Cyan);
+        AddCombinaison(ColorList.Turqoise, ColorList.Pink, ColorList.White);
+        AddCombinaison(ColorList.Turqoise, ColorList.White, ColorList.Cyan);
+        AddCombinaison(ColorList.Turqoise, ColorList.Black, ColorList.Green);
 
         // line 7 (Cyan)
-        AddCombinaison(ColorManager.ColorList.Cyan, ColorManager.ColorList.Blue, ColorManager.ColorList.Sky);
-        AddCombinaison(ColorManager.ColorList.Cyan, ColorManager.ColorList.Magenta, ColorManager.ColorList.Blue);
+        AddCombinaison(ColorList.Cyan, ColorList.Blue, ColorList.Sky);
+        AddCombinaison(ColorList.Cyan, ColorList.Magenta, ColorList.Blue);
 
         // line 8 (Sky)
-        AddCombinaison(ColorManager.ColorList.Sky, ColorManager.ColorList.Purple, ColorManager.ColorList.Blue);
-        AddCombinaison(ColorManager.ColorList.Sky, ColorManager.ColorList.White, ColorManager.ColorList.Cyan);
-        AddCombinaison(ColorManager.ColorList.Sky, ColorManager.ColorList.Black, ColorManager.ColorList.Blue);
+        AddCombinaison(ColorList.Sky, ColorList.Purple, ColorList.Blue);
+        AddCombinaison(ColorList.Sky, ColorList.White, ColorList.Cyan);
+        AddCombinaison(ColorList.Sky, ColorList.Black, ColorList.Blue);
 
         // line 9 (Blue)
-        AddCombinaison(ColorManager.ColorList.Blue, ColorManager.ColorList.Magenta, ColorManager.ColorList.Purple);
+        AddCombinaison(ColorList.Blue, ColorList.Magenta, ColorList.Purple);
 
         // line 10 (Purple)
-        AddCombinaison(ColorManager.ColorList.Purple, ColorManager.ColorList.Pink, ColorManager.ColorList.Magenta);
-        AddCombinaison(ColorManager.ColorList.Purple, ColorManager.ColorList.White, ColorManager.ColorList.Magenta);
-        AddCombinaison(ColorManager.ColorList.Purple, ColorManager.ColorList.Black, ColorManager.ColorList.Blue);
+        AddCombinaison(ColorList.Purple, ColorList.Pink, ColorList.Magenta);
+        AddCombinaison(ColorList.Purple, ColorList.White, ColorList.Magenta);
+        AddCombinaison(ColorList.Purple, ColorList.Black, ColorList.Blue);
 
         // line 11 (Magenta)
 
         // line 12 (Pink)
-        AddCombinaison(ColorManager.ColorList.Pink, ColorManager.ColorList.White, ColorManager.ColorList.Magenta);
-        AddCombinaison(ColorManager.ColorList.Pink, ColorManager.ColorList.Black, ColorManager.ColorList.Red);
+        AddCombinaison(ColorList.Pink, ColorList.White, ColorList.Magenta);
+        AddCombinaison(ColorList.Pink, ColorList.Black, ColorList.Red);
 
         // line 13 (White)
-        AddCombinaison(ColorManager.ColorList.White, ColorManager.ColorList.Black, ColorManager.ColorList.Grey);
+        AddCombinaison(ColorList.White, ColorList.Black, ColorList.Grey);
     }
 
-    private void AddCombinaison(ColorManager.ColorList colorA, ColorManager.ColorList colorB, ColorManager.ColorList colorC)
+    private void AddCombinaison(ColorList colorA, ColorList colorB, ColorList colorC)
     {
         combinaisons[(int)colorA,(int)colorB] = colorC;
         combinaisons[(int)colorB,(int)colorA] = colorC;
     }
 
-    public ColorManager.ColorList Combine(ColorManager.ColorList colorA, ColorManager.ColorList colorB)
+    public ColorList Combine(ColorList colorA, ColorList colorB)
     {
-        return (ColorManager.ColorList)(combinaisons[(int)colorA,(int)colorB]);
+        return (ColorList)(combinaisons[(int)colorA,(int)colorB]);
     }
 }

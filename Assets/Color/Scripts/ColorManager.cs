@@ -2,28 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorManager : MonoBehaviour
+public enum ColorList
 {
-    public enum ColorList
-    {
-        Red,
-        Orange,
-        Yellow,
-        Apple,
-        Green,
-        Turqoise,
-        Cyan,
-        Sky,
-        Blue,
-        Purple,
-        Magenta,
-        Pink,
-        White,
-        Black,
-        Grey,
-        Trash
-    }
+    Red,
+    Orange,
+    Yellow,
+    Apple,
+    Green,
+    Turqoise,
+    Cyan,
+    Sky,
+    Blue,
+    Purple,
+    Magenta,
+    Pink,
+    White,
+    Black,
+    Grey,
+    Trash
+}
 
+public class ColorManager : MonoBehaviour
+{    
     [Tooltip("Attention les textures doivent être dans l'ordre exacte de ColorList")]
     [SerializeField]
     Texture[] colorTexture = new Texture[16];
@@ -46,6 +46,37 @@ public class ColorManager : MonoBehaviour
         {ColorList.Grey, new Color(99,99,103)},
         {ColorList.Trash, new Color(69,48,0)}
     };
+
+    static string[] stringToEnum = new string[16] {
+        "Red",
+        "Orange",
+        "Yellow",
+        "Apple",
+        "Green",
+        "Turqoise",
+        "Cyan",
+        "Sky",
+        "Blue",
+        "Purple",
+        "Magenta",
+        "Pink",
+        "White",
+        "Black",
+        "Grey",
+        "Trash"
+    };
+    public static ColorList GetEnumByName(string colorName)
+    {
+        for (int i = 0; i < stringToEnum.Length; i++)
+        {
+            if (stringToEnum[i].Equals(colorName))
+            {
+                return (ColorList)i;
+            }
+        }
+
+        return (ColorList) (-1);
+    }
 
     Combinaison combinaison;
 

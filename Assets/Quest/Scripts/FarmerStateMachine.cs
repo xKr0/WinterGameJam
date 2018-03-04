@@ -164,7 +164,6 @@ public class FarmerStateMachine
 
     private void CloseDialogWindow()
     {
-        Debug.Log("sortir");
         farmerQuest.StopTalking();
         PlayerSpec.canMove = true;
         farmerQuest.IsInteracting = false;

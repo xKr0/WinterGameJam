@@ -85,12 +85,12 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    void TestColor(ColorManager.ColorList testColor)
+    void TestColor(ColorList testColor)
     {
         // unregister event
         currentClient.GetComponent<Detector>().OnDetect -= TestColor;
 
-        if (testColor == ColorManager.ColorList.Red)
+        if (testColor == ColorList.Red)
         {
             SucceedQuest();
         }

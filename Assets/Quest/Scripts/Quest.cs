@@ -5,7 +5,7 @@ using UnityEngine;
 public class Quest {
 
     private string text;
-    private string colorGoal;
+    private ColorList colorGoal;
     private int reward;
     private float timer;
     [SerializeField] private GetDialog csvManager;
@@ -24,7 +24,7 @@ public class Quest {
         }
     }
 
-    public string ColorGoal
+    public ColorList ColorGoal
     {
         get
         {
@@ -65,7 +65,7 @@ public class Quest {
 
     public Quest(string color, string text)
     {
-        ColorGoal = color;
+        colorGoal = ColorManager.GetEnumByName(color);
         Text = text;
         reward = 10;
         timer = 60.0f;

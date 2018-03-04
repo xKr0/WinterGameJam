@@ -13,7 +13,6 @@ public class FarmerQuest : MonoBehaviour {
     [SerializeField] private QuestHUDManager questHUD;
 
     List<string> colors = new List<string>();
-    private bool neverSeen = true;
     private string hello;
     private FarmerStateMachine fsmFarmer;
 

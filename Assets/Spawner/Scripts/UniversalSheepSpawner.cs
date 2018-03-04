@@ -9,7 +9,7 @@ public class UniversalSheepSpawner : MonoBehaviour {
     [SerializeField] private GameObject sheep;        // The red sheep prefab to be spawned.
 
     [Tooltip("Its Color")]
-    [SerializeField] private ColorManager.ColorList colorEnum;
+    [SerializeField] private ColorList colorEnum;
 
     [Tooltip("Time between spawn")]
     [SerializeField] private float spawnTime = 3f;    
