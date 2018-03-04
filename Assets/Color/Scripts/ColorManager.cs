@@ -28,7 +28,7 @@ public class ColorManager : MonoBehaviour
     [SerializeField]
     Texture[] colorTexture = new Texture[16];
 
-    Dictionary<ColorSheepEnum, Color> enumToColor = new Dictionary<ColorSheepEnum, Color>(){
+    static Dictionary<ColorSheepEnum, Color> enumToColor = new Dictionary<ColorSheepEnum, Color>(){
         {ColorSheepEnum.Red, new Color(218,8,2)},
         {ColorSheepEnum.Orange, new Color(246,144,5)},
         {ColorSheepEnum.Yellow, new Color(231,255,29)},
@@ -99,7 +99,7 @@ public class ColorManager : MonoBehaviour
         return combinaison.Combine(colorA, colorB);
     }
 
-    public Color GetColorFromEnum(ColorSheepEnum theEnum)
+    public static Color GetColorFromEnum(ColorSheepEnum theEnum)
     {
         return enumToColor[theEnum];
     }

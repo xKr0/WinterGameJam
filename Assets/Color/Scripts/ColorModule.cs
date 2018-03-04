@@ -40,7 +40,7 @@ public class ColorModule : MonoBehaviour {
         this.myColor = color;
         material.SetTexture("_MainTex", colorManager.GetTextureByColorEnum(color));
         ParticleSystem.MainModule settings = trail.main;
-        settings.startColor = new ParticleSystem.MinMaxGradient(colorManager.ConvertColor(colorManager.GetColorFromEnum(myColor)));
+        settings.startColor = new ParticleSystem.MinMaxGradient(colorManager.ConvertColor(ColorManager.GetColorFromEnum(myColor)));
     }
 
     private void OnCollisionEnter(Collision collision)
