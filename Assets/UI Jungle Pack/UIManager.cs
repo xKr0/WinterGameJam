@@ -104,11 +104,7 @@ public class UIManager : MonoBehaviour
         reprendre.GetComponent<Button>().Select();
         UnselectItem(back);
     }
-
-    public void Quit()
-    {
-        Application.Quit();
-    }
+        
 
     public void SelectItem(Transform button)
     {
@@ -147,13 +143,17 @@ public class UIManager : MonoBehaviour
 		}
 
 	}
-
+		
 	void RemoveHealth(int index)
 	{
 		healthPanel.transform.GetChild (index-1).gameObject.SetActive(false);
 	}
 
-    void BackToMenu(){
+
+    public void BackToMenu(){
+        PlayerSpec.canMove = true;
+        Time.timeScale = m_TimeScaleRef;
+
         SceneManager.LoadScene("Launch");
     }
 
