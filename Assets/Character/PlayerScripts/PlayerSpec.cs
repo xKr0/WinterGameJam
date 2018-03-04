@@ -8,7 +8,6 @@ public class PlayerSpec
     public static bool pressSubmit = false;
     public static bool pressCancel = false;
     public static bool pressGrab = false;
-    public static bool pressTalk = false;
     public static bool pressSpawn = false;
     public static bool canMove = true;
 

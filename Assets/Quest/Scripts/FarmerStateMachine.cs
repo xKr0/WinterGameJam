@@ -3,6 +3,7 @@ using UnityEngine;
 
 public enum FarmerState
 {
+    Idle,
     Hello,
     Offer,
     Random,
@@ -14,7 +15,7 @@ public enum FarmerState
 
 public class FarmerStateMachine
 {
-    FarmerState currentFarmerState;
+    FarmerState currentFarmerState = FarmerState.Idle;
 
     public FarmerState CurrentFarmerState
     {
@@ -33,6 +34,9 @@ public class FarmerStateMachine
     {
         switch (currentFarmerState)
         {
+            case FarmerState.Idle:
+                Idle();
+                break;
             case FarmerState.Hello:
                 Hello();
                 break;
@@ -56,6 +60,14 @@ public class FarmerStateMachine
                 break;
             default:
                 break;
+        }
+    }
+
+    private void Idle()
+    {
+        if (farmerQuest.IsInteracting)
+        {
+            currentFarmerState = FarmerState.Hello;
         }
     }
 
@@ -168,6 +180,6 @@ public class FarmerStateMachine
         PlayerSpec.canMove = true;
         farmerQuest.IsInteracting = false;
 
-        currentFarmerState = FarmerState.Hello;
+        currentFarmerState = FarmerState.Idle;
     }
 }
