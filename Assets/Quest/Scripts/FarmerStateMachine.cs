@@ -102,7 +102,8 @@ public class FarmerStateMachine
         }
 
         if (PlayerSpec.pressCancel)
-        {            
+        {
+			farmerQuest.PickRandomQuest();
             CloseDialogWindow();
         }
     }

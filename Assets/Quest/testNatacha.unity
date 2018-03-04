@@ -456,6 +456,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 466bd59d86313ee45adfa7adc334f670, type: 2}
   m_IsPrefabParent: 0
+--- !u!20 &535743962 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20050821549377932, guid: 7cee5c022112f5b41a464e91b0f9d4bd,
+    type: 2}
+  m_PrefabInternal: {fileID: 819721234}
 --- !u!1001 &576971706
 Prefab:
   m_ObjectHideFlags: 0
@@ -493,7 +498,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4670828205110814, guid: fccb0576c418c0b478c9b84afff6cef0, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4391783354277706, guid: fccb0576c418c0b478c9b84afff6cef0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -548,6 +553,11 @@ Prefab:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 114085170979914182, guid: fccb0576c418c0b478c9b84afff6cef0,
+        type: 2}
+      propertyPath: cameraPlayer
+      value: 
+      objectReference: {fileID: 535743962}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fccb0576c418c0b478c9b84afff6cef0, type: 2}
   m_IsPrefabParent: 0
@@ -727,7 +737,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4297707050089772, guid: 6708506acfc0cd84da3d79cbf3afacbf, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6708506acfc0cd84da3d79cbf3afacbf, type: 2}
@@ -1013,87 +1023,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &1161883112
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1161883116}
-  - component: {fileID: 1161883115}
-  - component: {fileID: 1161883114}
-  - component: {fileID: 1161883113}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!81 &1161883113
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1161883112}
-  m_Enabled: 1
---- !u!124 &1161883114
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1161883112}
-  m_Enabled: 1
---- !u!20 &1161883115
-Camera:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1161883112}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1161883116
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1161883112}
-  m_LocalRotation: {x: 0.07384739, y: 0, z: 0, w: 0.9972696}
-  m_LocalPosition: {x: 0, y: 2.06, z: -4.21}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 8.47, y: 0, z: 0}
 --- !u!1001 &1167090383
 Prefab:
   m_ObjectHideFlags: 0
@@ -1369,7 +1298,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1271827755
 Prefab:
@@ -1459,7 +1388,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4957156326538958, guid: 120afa2d9eb100f42aac3a73b0c71d1e, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 120afa2d9eb100f42aac3a73b0c71d1e, type: 2}
@@ -1494,7 +1423,7 @@ Transform:
   m_Children:
   - {fileID: 1630290680}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1323748426
 MonoBehaviour:
@@ -1847,7 +1776,7 @@ Transform:
   m_LocalScale: {x: 0.51335305, y: 0.51335293, z: 0.51971364}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1902788902 stripped
 MonoBehaviour:
