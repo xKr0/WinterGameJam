@@ -27,7 +27,6 @@ public class UIManager : MonoBehaviour
 
     // Pause Menu
     public static bool isPaused = false;
-    private bool showControls = false;
     public static bool pressStart = false;
 
     // HUD
@@ -88,7 +87,6 @@ public class UIManager : MonoBehaviour
     {
         controls.gameObject.SetActive(true);
         pauseMenu.gameObject.SetActive(false);
-        showControls = true;
         // Select the button
         back.GetComponent<Button>().Select(); // Or EventSystem.current.SetSelectedGameObject(myButton.gameObject)
         UnselectItem(controles);
@@ -97,7 +95,6 @@ public class UIManager : MonoBehaviour
     {
         controls.gameObject.SetActive(false);
         pauseMenu.gameObject.SetActive(true);
-        showControls = false;
         // Select the button
         reprendre.GetComponent<Button>().Select();
         UnselectItem(back);

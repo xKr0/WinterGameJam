@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ColorModule : MonoBehaviour {
     [SerializeField]
-    Renderer renderer;
+    Renderer sheepRenderer;
 
     Material material;
 
@@ -28,17 +28,15 @@ public class ColorModule : MonoBehaviour {
 	void Start () {
         colorManager = FindObjectOfType<ColorManager>();
 
-        material = renderer.material;
+        material = sheepRenderer.material;
 
         SetSheepColor(myColor);
-
-        //trail.main.startColor.color = colorManager.GetColorFromEnum(myColor);
     }
 
     public void SetSheepColor(ColorManager.ColorList color)
     {
         this.myColor = color;
-        material.SetTexture("_MainTex", colorManager.GetColorByEnum(color));
+        material.SetTexture("_MainTex", colorManager.GetTextureByColorEnum(color));
         ParticleSystem.MainModule settings = trail.main;
         settings.startColor = new ParticleSystem.MinMaxGradient(colorManager.ConvertColor(colorManager.GetColorFromEnum(myColor)));
     }

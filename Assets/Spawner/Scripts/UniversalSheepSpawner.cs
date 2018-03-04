@@ -23,8 +23,6 @@ public class UniversalSheepSpawner : MonoBehaviour {
     [Tooltip("Sound to play when popping")]
     [SerializeField]  AudioSource source;
 
-
-    bool canBuy = false;
     LevelManager levelManager;
 
     [SerializeField]
@@ -62,7 +60,7 @@ public class UniversalSheepSpawner : MonoBehaviour {
 
         o.GetComponent<ResetBehaviour>().enabled = true;
 
-        //source.PlayOneShot(pop);
+        source.Play();
     }
 
      void OnTriggerStay(Collider collider){

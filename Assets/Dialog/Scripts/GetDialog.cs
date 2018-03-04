@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class GetDialog : MonoBehaviour {
-
+public class GetDialog : MonoBehaviour
+{
 	public TextAsset csvQuete;
 	public TextAsset csvDialog;
 

@@ -7,7 +7,7 @@ public class FarmerQuest : MonoBehaviour {
     private Quest quest;
     private bool isInteracting = false;
     [SerializeField] private GetDialog csvManager;
-    [SerializeField] private newQuestManager questManager;
+    [SerializeField] private QuestManager questManager;
     [SerializeField] private TextBoxManager textBoxManager;
     [SerializeField] private QuestHUDManager questHUD;
     List<string> colors = new List<string>();
@@ -17,10 +17,7 @@ public class FarmerQuest : MonoBehaviour {
 
     public bool IsInteracting
     {
-        get
-        {
-            return isInteracting;
-        }
+        get { return isInteracting; }
 
         set
         {

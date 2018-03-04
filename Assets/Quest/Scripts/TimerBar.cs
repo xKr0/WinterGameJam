@@ -8,8 +8,7 @@ public class TimerBar : MonoBehaviour {
     private float initialValue;
     [SerializeField] private Image fill;
     public Color col;
-    private int red = 0;
-    private int green = 255;
+
     // Use this for initialization
     void Start()
     {

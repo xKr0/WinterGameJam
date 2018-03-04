@@ -58,7 +58,7 @@ public class ColorManager : MonoBehaviour
         return colorTexture.Length;
     }
 
-    public Texture GetColorByEnum(ColorList colorList)
+    public Texture GetTextureByColorEnum(ColorList colorList)
     {
         return colorTexture[(int)colorList];
     }
