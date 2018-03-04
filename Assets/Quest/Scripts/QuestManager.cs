@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour 
 {
-    private Quest currentQuest = null;
     private Collider currentClient = null;
 
     private bool isOnMission = false;
@@ -23,9 +22,8 @@ public class QuestManager : MonoBehaviour
         set { isOnMission = value; }
     }
 
-    public void ActivateQuest(Quest quest, Collider client)
+    public void ActivateQuest(Collider client)
     {
-        currentQuest = quest;
         currentClient = client;
         currentClient.GetComponent<Detector>().OnDetect += TestColor;
         isOnMission = true;
@@ -43,7 +41,7 @@ public class QuestManager : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= currentQuest.Timer)
+        if (timer >= currentClient.GetComponent<FarmerQuest>().Quest.Timer)
         {
             FailQuest();
         }
@@ -54,7 +52,7 @@ public class QuestManager : MonoBehaviour
         // unregister event
         currentClient.GetComponent<Detector>().OnDetect -= TestColor;
 
-        if (testColor == currentQuest.ColorGoal)
+        if (testColor == currentClient.GetComponent<FarmerQuest>().Quest.ColorGoal)
         {
             SucceedQuest();
         }
@@ -84,7 +82,6 @@ public class QuestManager : MonoBehaviour
     void ResetAll()
     {
         isOnMission = false;
-        currentQuest = null;
         currentClient = null;
         timer = 0.0f;
     }

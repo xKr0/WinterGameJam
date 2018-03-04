@@ -141,7 +141,7 @@ public class FarmerStateMachine
                 // Go To Random
                 currentFarmerState = FarmerState.Random;
             }
-            else if (!farmerQuest.QuestManager.IsOnMission)
+            else if (!farmerQuest.QuestManager.IsOnMission && !farmerQuest.Quest.IsDone)
             {
                 // show the dialog for the quest
                 farmerQuest.ShowQuestText();

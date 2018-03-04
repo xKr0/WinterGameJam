@@ -106,7 +106,7 @@ public class FarmerQuest : MonoBehaviour {
 
     public void AcceptQuest()
     {
-        questManager.ActivateQuest(quest, this.GetComponent<Collider>());
+        questManager.ActivateQuest(this.GetComponent<Collider>());
         questHUD.ActivateHUD(quest);
     }
 
