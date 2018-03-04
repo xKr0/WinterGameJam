@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
@@ -18,16 +19,10 @@ public class MenuHandler : MonoBehaviour {
     [SerializeField] GameObject playButton;
     [SerializeField] GameObject backControls;
     [SerializeField] GameObject backCredits;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
+    [SerializeField] Sprite buttonSelected;
+    [SerializeField] Sprite buttonNotSelected;
+    [SerializeField] Transform controlsButton;
+    [SerializeField] Transform creditsButton;
 
     public void Play(){
         SceneManager.LoadScene(scene);
@@ -37,6 +32,7 @@ public class MenuHandler : MonoBehaviour {
         basicMenu.SetActive(false);
         credits.SetActive(true);
         EventSystem.current.SetSelectedGameObject(backCredits);
+        UnselectItem(creditsButton);
     }
 
     public void Quit(){
@@ -47,6 +43,7 @@ public class MenuHandler : MonoBehaviour {
         basicMenu.SetActive(false);
         controles.SetActive(true);
         EventSystem.current.SetSelectedGameObject(backControls);
+        UnselectItem(controlsButton);
     }
 
     public void Back(){
@@ -54,5 +51,18 @@ public class MenuHandler : MonoBehaviour {
         credits.SetActive(false);
         controles.SetActive(false);
         EventSystem.current.SetSelectedGameObject(playButton);
+    }
+
+    public void SelectItem(Transform button)
+    {
+        button.GetComponent<Image>().sprite = buttonSelected;
+        //source.clip = changeSound;
+        //Debug.Log("ici " + source.clip != null);
+
+    }
+    public void UnselectItem(Transform button)
+    {
+        button.GetComponent<Image>().sprite = buttonNotSelected;
+        //source.Play();
     }
 }
