@@ -9,6 +9,7 @@ public class QuestHUDManager : MonoBehaviour
     [SerializeField] private GameObject questHUD;
     [SerializeField] private Text text;
     [SerializeField] private Slider slider;
+	[SerializeField] private Image fill;
 
     public void ActivateHUD(Quest quest)
     {
@@ -16,6 +17,7 @@ public class QuestHUDManager : MonoBehaviour
         text.text = quest.Text;
         slider.maxValue = quest.Timer;
         slider.value = quest.Timer;
+		fill.color = Color.green;
     }
 
     public void DesactiveHUD()
