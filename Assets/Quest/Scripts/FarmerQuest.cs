@@ -91,6 +91,8 @@ public class FarmerQuest : MonoBehaviour {
     public void Success()
     {
         levelmanager.AddMoney(quest.Reward);
+        levelmanager.AddColor(quest.ColorGoal);
+        levelmanager.CheckWin();
         eventMaker.RandomPositiveEvent();
         EndCurrentQuest();
     }
