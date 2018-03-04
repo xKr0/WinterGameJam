@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour {
 
     public static bool ONCE_ALL_SPAWNED = false;
 
+	public static int MAX_HEALTH = 5;
+
     public int MAX_SHEEP = 25;
 	// Use this for initialization
 
