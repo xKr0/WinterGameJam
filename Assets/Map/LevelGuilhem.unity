@@ -14823,6 +14823,12 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1129692732 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114320025075216276, guid: 8d8f049106c8bbf4580d937767e5e314,
+    type: 2}
+  m_PrefabInternal: {fileID: 1808959362}
+  m_Script: {fileID: 11500000, guid: 2e24edb1e0408479aabee4aab0833870, type: 3}
 --- !u!1 &1147365714
 GameObject:
   m_ObjectHideFlags: 0
@@ -15133,12 +15139,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1359387612}
   m_Mesh: {fileID: 4300020, guid: 412ab415becfa1d408db3b9fac7d4896, type: 3}
---- !u!114 &1372706792 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114600162921759802, guid: 8d8f049106c8bbf4580d937767e5e314,
-    type: 2}
-  m_PrefabInternal: {fileID: 1808959362}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1532924662
 Prefab:
   m_ObjectHideFlags: 0
@@ -15388,24 +15388,15 @@ Prefab:
       propertyPath: cameraPlayer
       value: 
       objectReference: {fileID: 251131449}
-    - target: {fileID: 114172704982170260, guid: 8d8f049106c8bbf4580d937767e5e314,
+    - target: {fileID: 114224611201163846, guid: 8d8f049106c8bbf4580d937767e5e314,
         type: 2}
-      propertyPath: fill
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1372706792}
-    - target: {fileID: 1275362433858552, guid: 8d8f049106c8bbf4580d937767e5e314, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224693835469569154, guid: 8d8f049106c8bbf4580d937767e5e314,
+      objectReference: {fileID: 1129692732}
+    - target: {fileID: 114224611201163846, guid: 8d8f049106c8bbf4580d937767e5e314,
         type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 480
-      objectReference: {fileID: 0}
-    - target: {fileID: 224693835469569154, guid: 8d8f049106c8bbf4580d937767e5e314,
-        type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.93745786
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d8f049106c8bbf4580d937767e5e314, type: 2}
