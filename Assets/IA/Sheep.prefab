@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cbff65e3fe0f104f882642a882e4f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 137719234907034012}
+  sheepRenderer: {fileID: 137719234907034012}
   particleExplosion: {fileID: 198221631263921120}
   trail: {fileID: 198444009323450652}
   myColor: 13
@@ -606,7 +606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d833a02cacbfde4d891ef77dc8da827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
 --- !u!137 &137719234907034012
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

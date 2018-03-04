@@ -688,7 +688,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2b64f2ecae4a2264da073746d1becf29, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1270,6 +1270,11 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1043747265}
+    - target: {fileID: 82102734492298684, guid: 8d8f049106c8bbf4580d937767e5e314,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d8f049106c8bbf4580d937767e5e314, type: 2}
   m_IsPrefabParent: 0
